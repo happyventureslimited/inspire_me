@@ -37,21 +37,21 @@ class _SavedScreenState extends State<SavedScreen> {
           ? const Center(child: CircularProgressIndicator())
           : saved.isEmpty
               ? const EmptyState(message: 'No saved stories')
-              : ListView.separated(
-                  padding: const EdgeInsets.all(12),
+              : ListView.builder(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
                   itemCount: saved.length,
-                  separatorBuilder: (_, _) => const SizedBox(height: 12),
                   itemBuilder: (context, i) {
-                    final story = saved[i];
+                  final story = saved[i];
 
                     return Card(
-                      elevation: 0,
-                      color: Theme.of(context).colorScheme.primary,
+                      elevation: 2,
+                      shadowColor: Theme.of(context).colorScheme.onTertiaryFixed,
+                      color: Theme.of(context).colorScheme.tertiary,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18),
+                        borderRadius: BorderRadius.circular(20),
                       ),
                       child: InkWell(
-                        borderRadius: BorderRadius.circular(18),
+                        borderRadius: BorderRadius.circular(20),
                         onTap: () {
                           Navigator.push(
                             context,
@@ -64,17 +64,16 @@ class _SavedScreenState extends State<SavedScreen> {
                           padding: const EdgeInsets.all(10),
                           child: Row(
                             children: [
-                              // Leading Icon
                               Container(
                                 height: 48,
                                 width: 48,
                                 decoration: BoxDecoration(
-                                  color: Theme.of(context).colorScheme.primaryContainer,
+                                  color: Theme.of(context).colorScheme.primary,
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                                 child: Icon(
                                   Icons.auto_stories,
-                                  color: Theme.of(context).colorScheme.primary,
+                                  color: Theme.of(context).colorScheme.tertiary,
                                   size: 26,
                                 ),
                               ),
@@ -86,12 +85,14 @@ class _SavedScreenState extends State<SavedScreen> {
                                   children: [
                                     Text(
                                       story.title,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
                                       style: Theme.of(context)
                                           .textTheme
                                           .titleMedium
                                           ?.copyWith(fontWeight: FontWeight.w600),
                                     ),
-                                    const SizedBox(height: 6),
+                                    const SizedBox(height: 4),
                     
                                     Text(
                                       story.content,
@@ -108,7 +109,7 @@ class _SavedScreenState extends State<SavedScreen> {
                               const SizedBox(width: 12),
                     
                               IconButton(
-                                icon: Icon(Icons.bookmark),
+                                icon: Icon(Icons.bookmark, color: Theme.of(context).colorScheme.primary,),
                                 onPressed: () {
                                   sp.toggleSaved(story);
 

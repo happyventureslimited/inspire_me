@@ -3,18 +3,12 @@ import '../screens/categories.dart';
 import '../screens/saved.dart';
 import '../screens/note.dart';
 import '../screens/more.dart';
-// import '../screens/story_list_screen.dart';
-// import '../screens/story_detail_screen.dart';
 
 class MainScaffold extends StatefulWidget {
   final int initialIndex;
   final Widget? child;
 
-  const MainScaffold({
-    super.key,
-    this.initialIndex = 0,
-    this.child,
-  });
+  const MainScaffold({super.key, this.initialIndex = 0, this.child});
 
   @override
   State<MainScaffold> createState() => _MainScaffoldState();
@@ -50,20 +44,52 @@ class _MainScaffoldState extends State<MainScaffold> {
 
     return Scaffold(
       body: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 250),
+        duration: const Duration(milliseconds: 1000),
         child: page,
       ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _index,
-        onDestinationSelected: (i) {
-          setState(() => _index = i);
-        },
-        destinations: const [
-          NavigationDestination(icon: Icon(Icons.list), label: 'Categories'),
-          NavigationDestination(icon: Icon(Icons.bookmark), label: 'Saved'),
-          NavigationDestination(icon: Icon(Icons.note), label: 'Notes'),
-          NavigationDestination(icon: Icon(Icons.more_horiz), label: 'More'),
-        ],
+
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+
+        child: ClipRRect(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+          child: NavigationBar(
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            height: 70,
+            labelPadding: EdgeInsets.all(0),
+            indicatorColor: Theme.of(context).colorScheme.secondary,
+            labelTextStyle: WidgetStateProperty.resolveWith((states) {
+              if (states.contains(WidgetState.selected)) {
+                return const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFFF5F5F5),
+                );
+              }
+              return const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
+                color: Color(0xFFF5F5F5),
+              );
+            }),
+            selectedIndex: _index,
+            onDestinationSelected: (i) => setState(() => _index = i),
+            destinations: const [
+              NavigationDestination(icon: Icon(Icons.list, color: Color(0xFFF5F5F5)), label: 'Categories',),
+              NavigationDestination(icon: Icon(Icons.bookmark, color: Color(0xFFF5F5F5)), label: 'Saved'),
+              NavigationDestination(icon: Icon(Icons.note, color: Color(0xFFF5F5F5)), label: 'Notes'),
+              NavigationDestination(icon: Icon(Icons.more_horiz, color: Color(0xFFF5F5F5)), label: 'More',),
+            ],
+          ),
+        ),
       ),
     );
   }

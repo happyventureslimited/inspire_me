@@ -47,10 +47,7 @@ class _NotesScreenState extends State<NotesScreen> {
               onCancel: () => Navigator.pop(context),
               onConfirm: (text) {
                 if (text.isNotEmpty) {
-                  np.createNote(
-                    storyId: 0,
-                    content: text,
-                  ); // storyId 0 = general note
+                  np.createNote(storyId: 0, content: text);
                 }
                 Navigator.pop(context);
               },
@@ -62,25 +59,42 @@ class _NotesScreenState extends State<NotesScreen> {
           ? const Center(child: CircularProgressIndicator())
           : notes.isEmpty
           ? const EmptyState(message: 'No notes available')
-          : ListView.separated(
-              padding: const EdgeInsets.all(12),
+          : ListView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
               itemCount: notes.length,
-              separatorBuilder: (_, _) => const SizedBox(height: 12),
               itemBuilder: (context, i) {
                 final n = notes[i];
-                final formatted = DateFormat('yyyy-MM-dd    hh:mm a').format(n.createdAt.toLocal());
+                final formatted = DateFormat(
+                  'yyyy-MM-dd    hh:mm a',
+                ).format(n.createdAt.toLocal());
 
                 return Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: ListTile(
+                    contentPadding: EdgeInsets.only(left: 12, top: 5, right: 5, bottom: 5),
+                    horizontalTitleGap: 2,
                     title: Text(
                       n.content,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
+                      style: TextStyle(height: 1.2),
                     ),
-                    subtitle: Text(formatted),
+
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 8),
+                        Text(
+                          formatted,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
                     onTap: () {
                       showDialog(
                         context: context,
@@ -99,14 +113,23 @@ class _NotesScreenState extends State<NotesScreen> {
                       );
                     },
                     trailing: IconButton(
-                      icon: const Icon(Icons.delete, color: Colors.red),
+                      padding: EdgeInsets.zero,
+                      constraints: const BoxConstraints.tightFor(
+                        width: 30,
+                        height: 30,
+                      ),
+                      icon: const Icon(
+                        Icons.delete,
+                        color: Colors.red,
+                        size: 20,
+                      ),
                       onPressed: () async {
                         final yes = await showConfirmDialog(
                           context: context,
                           title: "Delete Note?",
-                          message: "Are you sure you want to delete this note?",
+                          message:
+                              "This will permanently delete the note. Continue?",
                         );
-
                         if (yes) {
                           np.deleteNote(n.id);
                           // ignore: use_build_context_synchronously

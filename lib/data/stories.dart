@@ -4,113 +4,43 @@ final List<Story> offlineStories = [
   Story()
   ..category = 'Motivational'
   ..title = 'The Hill You Climb'
-  ..content = '''There is a hill in your life that no one else sees. Some days it looks like a small bump, other days a mountain. You take steps when your legs barely listen,
-              and breathe when your lungs feel like paper.
-              People may cheer you on or walk past without noticing,
-              but every inch you climb is a victory made in silence.
-              You learn your strength on the steepest days,
-              and discover your courage in the moments you want to stop.
-              The hill doesn’t shrink with complaints,
-              but it yields to persistence.
-              Keep climbing, the view waits for you, not for the ones who quit.
-            '''
+  ..content = '''There is a hill in your life that no one else sees. Some days it looks like a small bump, other days a mountain. You take steps when your legs barely listen, and breathe when your lungs feel like paper. People may cheer you on or walk past without noticing, but every inch you climb is a victory made in silence. You learn your strength on the steepest days, and discover your courage in the moments you want to stop. The hill doesn’t shrink with complaints, but it yields to persistence. Keep climbing, the view waits for you, not for the ones who quit.'''
   ..punchline = 'Every step forward rewrites your limits.',
   
   Story()
   ..category = 'Motivational'
   ..title = 'Sparks in the Fog'
-  ..content = '''When life feels foggy, remember that clarity is not a requirement for movement. You can walk even when the road disappears at your feet.
-              You can choose effort when certainty is nowhere to be found.
-              Small actions become sparks, and sparks grow into direction.
-              You won’t always feel brave, but you can always choose one small step.
-              Courage is often quiet, disguised as showing up again.
-              There are people who will doubt you, and days you will doubt yourself,
-              but momentum favors those who refuse to stand still.
-              Keep lighting sparks. Eventually the fog learns your name and parts.
-            '''
+  ..content = '''When life feels foggy, remember that clarity is not a requirement for movement. You can walk even when the road disappears at your feet. You can choose effort when certainty is nowhere to be found. Small actions become sparks, and sparks grow into direction. You won’t always feel brave, but you can always choose one small step. Courage is often quiet, disguised as showing up again. There are people who will doubt you, and days you will doubt yourself, but momentum favors those who refuse to stand still. Keep lighting sparks. Eventually the fog learns your name and parts.'''
   ..punchline = 'Bravery is choosing forward even when you can’t see ahead.',
 
   Story()
   ..category = 'Success'
   ..title = 'Built on Quiet Days'
-  ..content = '''
-Real success rarely arrives with applause.
-It is built on the quiet days when no one is watching,
-when progress feels invisible, and routine feels endless.
-You practice, refine, fail, repeat — long before results appear.
-People may only see the finished version of you,
-but the truth hides in the hours you almost gave up.
-Success grows slowly, like roots beneath the soil,
-drawing strength from patience and unseen work.
-So don’t underestimate the value of today’s small progress.
-Those tiny wins stack into greatness long before anyone notices.
-'''
+  ..content = '''Real success rarely arrives with applause. It is built on the quiet days when no one is watching, when progress feels invisible, and routine feels endless. You practice, refine, fail, repeat, long before results appear. People may only see the finished version of you, but the truth hides in the hours you almost gave up. Success grows slowly, like roots beneath the soil, drawing strength from patience and unseen work. So don’t underestimate the value of today’s small progress. Those tiny wins stack into greatness long before anyone notices. '''
   ..punchline = 'Success is the reward for consistency, not perfection.',
 
   Story()
   ..category = 'Success'
   ..title = 'The Door You Build'
-  ..content = '''Opportunities do not always knock — sometimes nothing knocks at all. But you are not powerless; your hands were made for building.
-You can craft your own doors from skill, effort, and persistence.
-You can create openings where others saw walls.
-Success is rarely gifted; it is assembled piece by piece,
-from choices you make when failure feels close.
-Each skill learned becomes a hinge,
-each challenge overcome becomes a frame.
-And when the door finally stands tall,
-you will realize the world was waiting for you to open it.
-'''
+  ..content = '''Opportunities do not always knock, sometimes nothing knocks at all. But you are not powerless; your hands were made for building. You can craft your own doors from skill, effort, and persistence. You can create openings where others saw walls. Success is rarely gifted; it is assembled piece by piece, from choices you make when failure feels close. Each skill learned becomes a hinge, each challenge overcome becomes a frame. And when the door finally stands tall, you will realize the world was waiting for you to open it. '''
   ..punchline = 'Success begins when you stop waiting for permission.',
 
   Story()
   ..category = 'Life'
   ..title = 'The Middle of the Story'
-  ..content = '''
-Life rarely gives clear beginnings or clean endings.
-Most days are lived somewhere in the middle —
-between who you were and who you hope to become.
-You won’t always understand what today is preparing you for,
-nor will every moment feel meaningful.
-But even confusion has a role, shaping you quietly.
-The chapters you dislike still contribute to your growth,
-and the parts you skip eventually make sense.
-Be patient with your unfolding; every story has a middle.
-And the middle is where character is formed.
-'''
+  ..content = '''Life rarely gives clear beginnings or clean endings. Most days are lived somewhere in the middle, between who you were and who you hope to become. You won’t always understand what today is preparing you for, nor will every moment feel meaningful. But even confusion has a role, shaping you quietly. The chapters you dislike still contribute to your growth, and the parts you skip eventually make sense. Be patient with your unfolding; every story has a middle. And the middle is where character is formed. '''
   ..punchline = 'Even unfinished chapters move you forward.',
 
   Story()
   ..category = 'Life'
   ..title = 'Lanterns of Memory'
-  ..content = '''
-Life is filled with small lanterns — moments that keep glowing long after they pass.
-Some are warm, some bittersweet, yet all of them guide you.
-A conversation you didn’t know mattered,
-a smile from a stranger on a difficult day,
-a failure that became a teacher,
-a quiet victory no one else saw.
-We often rush through life chasing a finish line,
-forgetting that these lanterns are the light of the journey.
-Pause sometimes, and let the glow remind you
-that life is not measured in years, but in moments that stay.
-'''
+  ..content = '''Life is filled with small lanterns, moments that keep glowing long after they pass. Some are warm, some bittersweet, yet all of them guide you. A conversation you didn’t know mattered, a smile from a stranger on a difficult day, a failure that became a teacher, a quiet victory no one else saw. We often rush through life chasing a finish line, forgetting that these lanterns are the light of the journey. Pause sometimes, and let the glow remind you that life is not measured in years, but in moments that stay. '''
   ..punchline = 'Life’s beauty is carried in the memories that whisper back.',
 
   Story()
   ..category = 'Love'
   ..title = 'The Way Hearts Learn'
-  ..content = '''
-Love is not mastered in a single moment;
-it grows through missteps, apologies, learning, and patience.
-Two imperfect people choosing each other again and again —
-that is where love becomes real.
-Some days are soft and full of laughter,
-others feel heavy with misunderstanding.
-But growth happens when both hearts stay open,
-even when pride wants to shut the door.
-Love deepens not through perfection,
-but through the courage to stay honest and kind.
-'''
+  ..content = '''Love is not mastered in a single moment; it grows through missteps, apologies, learning, and patience. Two imperfect people choosing each other again and again, that is where love becomes real. Some days are soft and full of laughter, others feel heavy with misunderstanding. But growth happens when both hearts stay open, even when pride wants to shut the door. Love deepens not through perfection, but through the courage to stay honest and kind.'''
   ..punchline = 'True love is a daily decision, not a single discovery.',
 
   Story()
@@ -200,7 +130,7 @@ You’ll see that light grows quickly when given a chance.
   ..category = 'Spiritual'
   ..title = 'The Breath Between Moments'
   ..content = '''
-Spiritual peace often lives in the quietest places —
+Spiritual peace often lives in the quietest places,
 the breath you almost forget to take,
 the silence between thoughts,
 the stillness just before dawn.
@@ -218,7 +148,7 @@ and your heart remembers that it was never truly alone.
   ..category = 'Spiritual'
   ..title = 'The Lamp Within'
   ..content = '''
-Every person carries a small lamp inside them —
+Every person carries a small lamp inside them,
 a source of calm, clarity, and quiet guidance.
 Some days it glows bright; other days it flickers.
 Life may shake it, storms may dim it,
@@ -240,7 +170,7 @@ They understand your silence as deeply as your words,
 and they show up even when you tell them you’re “fine.”
 Friendship doesn’t depend on daily messages or perfect timing.
 It thrives on trust built over countless small moments.
-A shared joke, a listening ear, a memory that never fades —
+A shared joke, a listening ear, a memory that never fades,
 these form the rope that holds you steady.
 Good friends remind you who you are when you begin to forget.
 '''
@@ -269,7 +199,7 @@ Story()
   ..content = '''
 Courage is rarely loud. Sometimes it looks like a person taking
 one trembling step forward while fear whispers a hundred reasons to turn back.
-The bravest moments often go unnoticed — waking up after a hard night,
+The bravest moments often go unnoticed, waking up after a hard night,
 trying again after a failure, speaking kindly when anger feels justified.
 Courage grows when you move despite uncertainty,
 not when certainty magically appears.
@@ -286,7 +216,7 @@ Each small act of bravery teaches your heart that it can handle more than it bel
 Imagine walking through a dark forest with only a dim lantern.
 The light barely reaches the ground beneath your feet,
 and the world beyond remains unknown.
-Yet you keep moving — that is courage.
+Yet you keep moving, that is courage.
 Not because the path is clear, but because something inside refuses to stop.
 Courage isn’t the absence of doubt;
 it’s the decision to walk forward even when doubt walks with you.
@@ -302,7 +232,7 @@ and soon the path behind you glows with proof that you survived what scared you.
 Life reflects what you choose to see.
 Some people look at challenges and see obstacles;
 others see invitations to grow.
-Meaning is not something life hands you —
+Meaning is not something life hands you,
 it is something you place into your experiences.
 Two people can live the same day and walk away with different truths.
 When you pause and interpret your moments with curiosity,
@@ -318,7 +248,7 @@ Life slowly reveals itself to those who are willing to reflect rather than react
 Questions can weigh more than answers.
 They follow you at night, sit with you in silence,
 and tug at your thoughts during quiet moments.
-But questions are not burdens — they are guides.
+But questions are not burdens, they are guides.
 They tell you what your soul is searching for,
 what truth you haven’t yet understood.
 Answers are destinations, but questions are maps.
@@ -338,7 +268,7 @@ There are seasons where you feel stuck,
 but beneath the surface, roots are strengthening.
 Growth is not measured by speed but by sincerity.
 Every small effort, every moment of patience,
-every time you choose progress over perfection —
+every time you choose progress over perfection,
 these become petals of the life you are building.
 '''
   ..punchline = 'Grow slowly, but grow truly.',
@@ -347,7 +277,7 @@ these become petals of the life you are building.
   ..category = 'Growth'
   ..title = 'The Mountain Within'
   ..content = '''
-Every person carries a mountain within them —
+Every person carries a mountain within them,
 a collection of fears, habits, and limitations.
 Climbing it can feel overwhelming,
 but growth happens one step, one breath, one choice at a time.
@@ -356,7 +286,7 @@ you become strong because you choose to climb.
 Along the way, you meet versions of yourself you’ve outgrown,
 and you learn to let go of what no longer serves you.
 When you reach a new height, even a small one,
-you realize the mountain wasn’t blocking you —
+you realize the mountain wasn’t blocking you,
 it was building you.
 '''
   ..punchline = 'Growth is the climb, not the summit.',
@@ -369,7 +299,7 @@ Faith is walking toward a future that hasn’t revealed its structure yet.
 It’s trusting that the bridge will appear as you move,
 even when your doubts insist you turn back.
 Faith lives in the space between fear and hope.
-You don’t need proof to take the first step —
+You don’t need proof to take the first step,
 just the courage to believe that something good is possible.
 Every time life has carried you through a challenge,
 it quietly prepared you for the next.
@@ -388,7 +318,7 @@ that things will unfold as they should.
 You feel it when chaos calms for a moment,
 when hope flickers during difficulty,
 when inner peace appears despite uncertainty.
-Faith doesn’t demand that you know the outcome —
+Faith doesn’t demand that you know the outcome,
 only that you trust the process.
 It reminds you that unseen forces are working in your favor,
 and your story is still being written with purpose.
@@ -451,7 +381,7 @@ The world is full of quiet miracles.
 Everyone carries an inner flame,
 but for some, it burns quietly beneath layers of doubt.
 Inspiration is the spark that brings it back to life.
-A good story, a kind word, a moment of clarity —
+A good story, a kind word, a moment of clarity,
 any of these can reignite your fire.
 When you act from that flame,
 your energy spreads to others without effort.
@@ -466,7 +396,7 @@ Self-belief fuels the flame until it becomes a rising force.
   ..title = 'Ripples in the Quiet'
   ..content = '''
 Kindness often operates quietly.
-A smile, a patient pause, a gentle reply —
+A smile, a patient pause, a gentle reply,
 small gestures that shift someone’s entire day.
 Kindness doesn’t require wealth, talent, or perfection.
 It grows from compassion,

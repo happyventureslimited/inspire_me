@@ -21,12 +21,12 @@ class CategoryCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         child: Ink(
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.surface,
+            color: Theme.of(context).colorScheme.tertiary,
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
                 blurRadius: 10,
-                color: const Color.fromRGBO(33, 33, 33, 0.5),
+                color: Theme.of(context).colorScheme.onTertiaryFixed,
                 offset: const Offset(0, 2),
               ),
             ],
@@ -40,7 +40,7 @@ class CategoryCard extends StatelessWidget {
                   height: 70,
                   width: 70,
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary.withAlpha(9),
+                    color: Theme.of(context).colorScheme.primary.withAlpha(50),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(

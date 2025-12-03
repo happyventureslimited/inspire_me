@@ -35,58 +35,71 @@ class StoryDetailScreen extends StatelessWidget {
             },
           ),
           IconButton(
+            padding: EdgeInsets.symmetric(horizontal: 17),
             icon: Icon(Icons.note_add),
             onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (_) => NoteDialog(
-                    title: "Add Note",
-                    initialText: "",
-                    confirmLabel: "Save",
-                    onCancel: () => Navigator.pop(context),
-                    onConfirm: (text) {
-                      if (text.isNotEmpty) {
-                        context.read<NotesProvider>().createNote(
-                          storyId: storyId,
-                          content: text,
-                        );
-                      }
-                      Navigator.pop(context);
-                      AppSnack.show(context, "Note added successfully!");
-                    },
-                  ),
-                );
-              },
-          )
-          
+              showDialog(
+                context: context,
+                builder: (_) => NoteDialog(
+                  title: "Add Note",
+                  initialText: "",
+                  confirmLabel: "Save",
+                  onCancel: () => Navigator.pop(context),
+                  onConfirm: (text) {
+                    if (text.isNotEmpty) {
+                      context.read<NotesProvider>().createNote(
+                        storyId: storyId,
+                        content: text,
+                      );
+                    }
+                    Navigator.pop(context);
+                    AppSnack.show(context, "Note added successfully!");
+                  },
+                ),
+              );
+            },
+          ),
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 30),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// TITLE
-            Text(story.title, style: Theme.of(context).textTheme.headlineSmall),
+            Text(
+              story.title,
+              textAlign: TextAlign.justify,
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
+                fontSize: 20, 
+                fontWeight: FontWeight.w600
+                ),
+            ),
             const SizedBox(height: 12),
 
-            /// CONTENT (scrollable)
             Expanded(
               child: SingleChildScrollView(
-                child: Text(
-                  story.content,
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
+                child: Text(story.content, style: TextStyle(fontSize: 16.7, height: 1.4)),
               ),
             ),
 
             const SizedBox(height: 16),
 
-            /// PUNCHLINE
-            Text('Punchline:', style: Theme.of(context).textTheme.titleMedium),
+            Text(
+              'Punchline:',
+              textAlign: TextAlign.justify,
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(height: 5,),
             Text(
               story.punchline,
-              style: Theme.of(context).textTheme.titleLarge,
+              style: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.w600
+              ),
             ),
           ],
         ),
