@@ -12,12 +12,12 @@ class MoreScreen extends StatelessWidget {
   const MoreScreen({super.key});
 
   void _navigateTo(BuildContext context, String route) {
-		if (route.startsWith('http')) {
-		  openUrl(context, route);
-		} else {
-		  Navigator.pop(context);
-		  Navigator.pushNamed(context, route);
-		}
+    if (route.startsWith('http')) {
+      openUrl(context, route);
+    } else {
+      Navigator.pop(context);
+      Navigator.pushNamed(context, route);
+    }
   }
 
   Future<void> openUrl(BuildContext context, String url) async {
@@ -36,9 +36,9 @@ class MoreScreen extends StatelessWidget {
       try {
         await launchUrl(uri, mode: LaunchMode.inAppWebView);
       } catch (e2) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Could not open link: $e2")),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text("Could not open link: $e2")));
       }
     }
   }
@@ -52,91 +52,94 @@ class MoreScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('More')),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: ListView(
           children: [
-            Column(
-              children: [
-                Card(
-                  child: ListTile(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10,),
-                    leading: const Icon(Icons.info_outline),
-                    title: const Text("About"),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const AboutScreen()),
+            Card(
+              child: ListTile(
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 10,
+                ),
+                leading: const Icon(Icons.info_outline),
+                title: const Text("About"),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const AboutScreen()),
+                  );
+                },
+              ),
+            ),
+            SizedBox(height: 12),
+            Card(
+              child: ListTile(
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 10,
+                ),
+                leading: const Icon(Icons.privacy_tip_outlined),
+                title: const Text("Privacy Policy"),
+                onTap: () => _navigateTo(
+                  context,
+                  'https://inspireme.happyventureslimited.com/privacy-policy',
+                ),
+              ),
+            ),
+            const SizedBox(height: 50),
+            SwitchListTile(
+              title: const Text("Dark Mode"),
+              value: context.watch<ThemeProvider>().isDark,
+              onChanged: (value) {
+                context.read<ThemeProvider>().setTheme(
+                  value ? ThemeMode.dark : ThemeMode.light,
+                );
+              },
+              thumbIcon: WidgetStateProperty.resolveWith((states) {
+                if (states.contains(WidgetState.selected)) {
+                  return const Icon(Icons.dark_mode, size: 16);
+                }
+                return const Icon(Icons.light_mode, size: 16);
+              }),
+              activeTrackColor: Theme.of(context).colorScheme.tertiary,
+              inactiveTrackColor: Theme.of(context).colorScheme.tertiary,
+              activeThumbColor: Theme.of(context).colorScheme.primary,
+              inactiveThumbColor: Theme.of(context).colorScheme.primary,
+            ),
+            const Divider(height: 28, thickness: .3),
+            Padding(
+              padding: const EdgeInsets.only(left: 16, right: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Reset App",
+                    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.refresh_outlined),
+                    color: Colors.red,
+                    iconSize: 30,
+                    onPressed: () async {
+                      final yes = await showConfirmDialog(
+                        context: context,
+                        title: "Reset App?",
+                        message:
+                            "This will reset the app and delete all saved stories and notes. Continue?",
                       );
+
+                      if (yes) {
+                        await seedService.clearDatabase();
+                        await seedService.seedStoriesIfNeeded();
+
+                        context.read<ThemeProvider>().setTheme(ThemeMode.light);
+
+                        // ignore: use_build_context_synchronously
+                        AppSnack.show(context, "App reset complete");
+                      }
                     },
                   ),
-                ),
-                SizedBox(height: 12),
-                Card(
-                  child: ListTile(
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 10,
-                    ),
-                    leading: const Icon(Icons.privacy_tip_outlined),
-                    title: const Text("Privacy Policy"),
-                    onTap: () => _navigateTo(context, 'https://inspireme.happyventureslimited.com/privacy-policy'),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 60),
-            Column(
-              children: [
-                SwitchListTile(
-                  title: const Text("Dark Mode"),
-                  value: context.watch<ThemeProvider>().isDark,
-                  onChanged: (value) {
-                    context.read<ThemeProvider>().setTheme(
-                      value ? ThemeMode.dark : ThemeMode.light,
-                    );
-                  },
-                ),
-                const Divider(height: 28),
-                Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        "Reset App",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16,
-                        ),
-                      ),
-                      IconButton(
-                        icon: const Icon(Icons.refresh_outlined),
-                        color: Colors.red,
-                        iconSize: 30,
-                        onPressed: () async {
-                          final yes = await showConfirmDialog(
-                            context: context,
-                            title: "Reset App?",
-                            message:
-                                "This will reset the app and delete all saved stories and notes. Continue?",
-                          );
-        
-                          if (yes) {
-                            await seedService.clearDatabase();
-                            await seedService.seedStoriesIfNeeded();
-
-                            context.read<ThemeProvider>().setTheme(ThemeMode.light);
-        
-                            // ignore: use_build_context_synchronously
-                            AppSnack.show(context, "App reset complete");
-                          }
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 25),
-              ],
+                ],
+              ),
             ),
           ],
         ),

@@ -21,24 +21,28 @@ class NoteDialog extends StatelessWidget {
     final controller = TextEditingController(text: initialText);
 
     return AlertDialog(
+      insetPadding: EdgeInsets.all(0.1),
       title: Text(title),
+      titleTextStyle: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
       content: TextField(
         controller: controller,
-        maxLines: 4,
+        minLines: 20,
+        maxLines: 100,
         decoration: const InputDecoration(
-          border: OutlineInputBorder(),
+          border: InputBorder.none,
           hintText: "Write your note...",
         ),
       ),
       actions: [
-        TextButton(
-          onPressed: onCancel,
-          child: const Text("Cancel"),
-        ),
+        TextButton(onPressed: onCancel, child: const Text("Cancel")),
         ElevatedButton(
           onPressed: () => onConfirm(controller.text.trim()),
           child: Text(confirmLabel),
-        )
+        ),
       ],
     );
   }

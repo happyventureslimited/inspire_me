@@ -29,12 +29,12 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-assets:
-  - assets/images/inspire_me_icon.png
-  - assets/images/inspire_me_icon2.png
-  - assets/images/hv_logo.png
-  - assets/images/splash_icon.png
-  - assets/images/splash_branding.png
+  assets:
+    - assets/images/inspire_me_icon.png
+    - assets/images/inspire_me_icon2.png
+    - assets/images/hv_logo.png
+    - assets/images/splash_icon.png
+    - assets/images/splash_branding.png
 
 fonts:
   - family: Fredoka

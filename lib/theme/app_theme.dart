@@ -12,10 +12,9 @@ class AppTheme {
       primary: const Color(0xFFD6952D),
       onPrimary: const Color(0xFFFFFFFF),
       secondary: const Color(0xFFFFB132),
-      onSecondary: Color(0xFF555555),
-      // onSecondaryFixed: const Color(0xFFBEBEBE),
+      onSecondary: const Color(0xFFF5F5F5),
       tertiary: const Color(0xFFF5F5F5),
-      onTertiaryFixed: Color(0xFFCFCFCF)
+      onTertiaryFixed: Color(0xFFCFCFCF),
     ),
 
     appBarTheme: const AppBarTheme(
@@ -26,8 +25,8 @@ class AppTheme {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(15),
-          bottomRight: Radius.circular(15)
-        )
+          bottomRight: Radius.circular(15),
+        ),
       ),
       iconTheme: IconThemeData(color: Color(0xFFF5F5F5), size: 22),
     ),
@@ -35,15 +34,11 @@ class AppTheme {
     cardTheme: CardThemeData(
       color: Color(0xFFF5F5F5),
       elevation: 2,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
     ),
 
     inputDecorationTheme: InputDecorationTheme(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
     ),
   );
 
@@ -51,27 +46,40 @@ class AppTheme {
     useMaterial3: true,
     fontFamily: 'Fredoka',
     brightness: Brightness.dark,
-    colorSchemeSeed: Colors.indigo,
     visualDensity: VisualDensity.adaptivePlatformDensity,
+    colorScheme: ColorScheme.dark(
+      surface: const Color(0xFF1A1A1A),
+      onSurface: const Color(0xFFE6E6E6), 
+      primary: const Color(0xFFD6952D,),
+      onPrimary: const Color(0xFF000000),
+      secondary: const Color(0xFFFFB132),
+      onSecondary: const Color(0xFF2A2A2A),
+      tertiary: const Color(0xFF222222),
+      onTertiaryFixed: const Color(0xFF1D1D1D),
+    ),
 
     appBarTheme: const AppBarTheme(
       centerTitle: true,
       elevation: 0,
+      backgroundColor: Color(0xFFD6952D),
+      titleTextStyle: TextStyle(color: Color(0xFF222222), fontSize: 18),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(15),
+          bottomRight: Radius.circular(15),
+        ),
+      ),
+      iconTheme: IconThemeData(color: Color(0xFF222222), size: 22),
     ),
 
     cardTheme: CardThemeData(
-      color: const Color(0xFF1E1E1E),
-      elevation: 1,
-      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
+      color: Color(0xFF222222),
+      elevation: 2,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
     ),
 
     inputDecorationTheme: InputDecorationTheme(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
     ),
   );
 }

@@ -68,25 +68,25 @@ class _MainScaffoldState extends State<MainScaffold> {
             indicatorColor: Theme.of(context).colorScheme.secondary,
             labelTextStyle: WidgetStateProperty.resolveWith((states) {
               if (states.contains(WidgetState.selected)) {
-                return const TextStyle(
+                return TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFFF5F5F5),
+                  color: Theme.of(context).colorScheme.onSecondary,
                 );
               }
-              return const TextStyle(
+              return TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
-                color: Color(0xFFF5F5F5),
+                color: Theme.of(context).colorScheme.onSecondary,
               );
             }),
             selectedIndex: _index,
             onDestinationSelected: (i) => setState(() => _index = i),
-            destinations: const [
-              NavigationDestination(icon: Icon(Icons.list, color: Color(0xFFF5F5F5)), label: 'Categories',),
-              NavigationDestination(icon: Icon(Icons.bookmark, color: Color(0xFFF5F5F5)), label: 'Saved'),
-              NavigationDestination(icon: Icon(Icons.note, color: Color(0xFFF5F5F5)), label: 'Notes'),
-              NavigationDestination(icon: Icon(Icons.more_horiz, color: Color(0xFFF5F5F5)), label: 'More',),
+            destinations: [
+              NavigationDestination(icon: Icon(Icons.list, color: Theme.of(context).colorScheme.onSecondary), label: 'Categories',),
+              NavigationDestination(icon: Icon(Icons.bookmark, color: Theme.of(context).colorScheme.onSecondary), label: 'Saved'),
+              NavigationDestination(icon: Icon(Icons.note, color: Theme.of(context).colorScheme.onSecondary), label: 'Notes'),
+              NavigationDestination(icon: Icon(Icons.more_horiz, color: Theme.of(context).colorScheme.onSecondary), label: 'More',),
             ],
           ),
         ),
