@@ -8,7 +8,7 @@ class Story {
   late String category;
   late String title;
   late String content;
-  late String punchline;
+  late String lesson;
 
   bool isSaved = false;
 }

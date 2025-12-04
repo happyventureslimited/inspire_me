@@ -1,21 +1,23 @@
 name: inspire_me
-description: "Daily dose of short inspiring stories"
+description: "Uplifting short stories designed to inspire, motivate, and encourage growth."
 publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.10.0
+  sdk: ^3.9.2
 
 dependencies:
   flutter:
     sdk: flutter
   isar: ^3.1.0+1
   isar_flutter_libs: ^3.1.0+1
-  provider: ^6.1.2
+  # isar_plus: ^1.1.6
+  # isar_plus_flutter_libs: ^1.1.6
+  provider: ^6.1.5+1
   path_provider: ^2.1.5
-  shared_preferences: ^2.2.2
   intl: ^0.20.2
-  url_launcher: ^6.2.6
+  url_launcher: ^6.3.2
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:
@@ -23,8 +25,8 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   flutter_launcher_icons: ^0.14.4
   flutter_native_splash: ^2.4.7
-  isar_generator: ^3.1.0+1
   build_runner: ^2.4.13
+  isar_generator: ^3.1.0+1
 
 flutter:
   uses-material-design: true
@@ -40,8 +42,6 @@ fonts:
   - family: Fredoka
     fonts:
       - asset: assets/fonts/Fredoka/Fredoka-VariableFont_wdth,wght.ttf
-      # - asset: fonts/TrajanPro_Bold.ttf
-        # weight: 700
 
 flutter_native_splash:
   color: "#ffffff"

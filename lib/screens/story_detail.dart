@@ -63,11 +63,11 @@ class StoryDetailScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 30),
-        child: Column(
+        child: ListView(
           children: [
             Text(
               story.title,
-              textAlign: TextAlign.justify,
+              textAlign: TextAlign.center,
               style: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
                 fontSize: 20, 
@@ -76,17 +76,13 @@ class StoryDetailScreen extends StatelessWidget {
             ),
             const SizedBox(height: 12),
 
-            Expanded(
-              child: SingleChildScrollView(
-                child: Text(story.content, style: TextStyle(fontSize: 16.7, height: 1.4)),
-              ),
-            ),
+            Text(story.content, style: TextStyle(fontSize: 16.7, height: 1.4)),
 
-            const SizedBox(height: 16),
+            const SizedBox(height: 50),
 
             Text(
-              'Punchline:',
-              textAlign: TextAlign.justify,
+              'Lesson:',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
                 fontSize: 18,
@@ -95,7 +91,7 @@ class StoryDetailScreen extends StatelessWidget {
             ),
             SizedBox(height: 5,),
             Text(
-              story.punchline,
+              story.lesson,
               style: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.w600

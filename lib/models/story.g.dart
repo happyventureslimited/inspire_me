@@ -32,9 +32,9 @@ const StorySchema = CollectionSchema(
       name: r'isSaved',
       type: IsarType.bool,
     ),
-    r'punchline': PropertySchema(
+    r'lesson': PropertySchema(
       id: 3,
-      name: r'punchline',
+      name: r'lesson',
       type: IsarType.string,
     ),
     r'title': PropertySchema(
@@ -65,7 +65,7 @@ int _storyEstimateSize(
   var bytesCount = offsets.last;
   bytesCount += 3 + object.category.length * 3;
   bytesCount += 3 + object.content.length * 3;
-  bytesCount += 3 + object.punchline.length * 3;
+  bytesCount += 3 + object.lesson.length * 3;
   bytesCount += 3 + object.title.length * 3;
   return bytesCount;
 }
@@ -79,7 +79,7 @@ void _storySerialize(
   writer.writeString(offsets[0], object.category);
   writer.writeString(offsets[1], object.content);
   writer.writeBool(offsets[2], object.isSaved);
-  writer.writeString(offsets[3], object.punchline);
+  writer.writeString(offsets[3], object.lesson);
   writer.writeString(offsets[4], object.title);
 }
 
@@ -94,7 +94,7 @@ Story _storyDeserialize(
   object.content = reader.readString(offsets[1]);
   object.id = id;
   object.isSaved = reader.readBool(offsets[2]);
-  object.punchline = reader.readString(offsets[3]);
+  object.lesson = reader.readString(offsets[3]);
   object.title = reader.readString(offsets[4]);
   return object;
 }
@@ -530,20 +530,20 @@ extension StoryQueryFilter on QueryBuilder<Story, Story, QFilterCondition> {
     });
   }
 
-  QueryBuilder<Story, Story, QAfterFilterCondition> punchlineEqualTo(
+  QueryBuilder<Story, Story, QAfterFilterCondition> lessonEqualTo(
     String value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
-        property: r'punchline',
+        property: r'lesson',
         value: value,
         caseSensitive: caseSensitive,
       ));
     });
   }
 
-  QueryBuilder<Story, Story, QAfterFilterCondition> punchlineGreaterThan(
+  QueryBuilder<Story, Story, QAfterFilterCondition> lessonGreaterThan(
     String value, {
     bool include = false,
     bool caseSensitive = true,
@@ -551,14 +551,14 @@ extension StoryQueryFilter on QueryBuilder<Story, Story, QFilterCondition> {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.greaterThan(
         include: include,
-        property: r'punchline',
+        property: r'lesson',
         value: value,
         caseSensitive: caseSensitive,
       ));
     });
   }
 
-  QueryBuilder<Story, Story, QAfterFilterCondition> punchlineLessThan(
+  QueryBuilder<Story, Story, QAfterFilterCondition> lessonLessThan(
     String value, {
     bool include = false,
     bool caseSensitive = true,
@@ -566,14 +566,14 @@ extension StoryQueryFilter on QueryBuilder<Story, Story, QFilterCondition> {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.lessThan(
         include: include,
-        property: r'punchline',
+        property: r'lesson',
         value: value,
         caseSensitive: caseSensitive,
       ));
     });
   }
 
-  QueryBuilder<Story, Story, QAfterFilterCondition> punchlineBetween(
+  QueryBuilder<Story, Story, QAfterFilterCondition> lessonBetween(
     String lower,
     String upper, {
     bool includeLower = true,
@@ -582,7 +582,7 @@ extension StoryQueryFilter on QueryBuilder<Story, Story, QFilterCondition> {
   }) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.between(
-        property: r'punchline',
+        property: r'lesson',
         lower: lower,
         includeLower: includeLower,
         upper: upper,
@@ -592,69 +592,69 @@ extension StoryQueryFilter on QueryBuilder<Story, Story, QFilterCondition> {
     });
   }
 
-  QueryBuilder<Story, Story, QAfterFilterCondition> punchlineStartsWith(
+  QueryBuilder<Story, Story, QAfterFilterCondition> lessonStartsWith(
     String value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.startsWith(
-        property: r'punchline',
+        property: r'lesson',
         value: value,
         caseSensitive: caseSensitive,
       ));
     });
   }
 
-  QueryBuilder<Story, Story, QAfterFilterCondition> punchlineEndsWith(
+  QueryBuilder<Story, Story, QAfterFilterCondition> lessonEndsWith(
     String value, {
     bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.endsWith(
-        property: r'punchline',
+        property: r'lesson',
         value: value,
         caseSensitive: caseSensitive,
       ));
     });
   }
 
-  QueryBuilder<Story, Story, QAfterFilterCondition> punchlineContains(
+  QueryBuilder<Story, Story, QAfterFilterCondition> lessonContains(
       String value,
       {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.contains(
-        property: r'punchline',
+        property: r'lesson',
         value: value,
         caseSensitive: caseSensitive,
       ));
     });
   }
 
-  QueryBuilder<Story, Story, QAfterFilterCondition> punchlineMatches(
+  QueryBuilder<Story, Story, QAfterFilterCondition> lessonMatches(
       String pattern,
       {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.matches(
-        property: r'punchline',
+        property: r'lesson',
         wildcard: pattern,
         caseSensitive: caseSensitive,
       ));
     });
   }
 
-  QueryBuilder<Story, Story, QAfterFilterCondition> punchlineIsEmpty() {
+  QueryBuilder<Story, Story, QAfterFilterCondition> lessonIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
-        property: r'punchline',
+        property: r'lesson',
         value: '',
       ));
     });
   }
 
-  QueryBuilder<Story, Story, QAfterFilterCondition> punchlineIsNotEmpty() {
+  QueryBuilder<Story, Story, QAfterFilterCondition> lessonIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.greaterThan(
-        property: r'punchline',
+        property: r'lesson',
         value: '',
       ));
     });
@@ -830,15 +830,15 @@ extension StoryQuerySortBy on QueryBuilder<Story, Story, QSortBy> {
     });
   }
 
-  QueryBuilder<Story, Story, QAfterSortBy> sortByPunchline() {
+  QueryBuilder<Story, Story, QAfterSortBy> sortBylesson() {
     return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'punchline', Sort.asc);
+      return query.addSortBy(r'lesson', Sort.asc);
     });
   }
 
-  QueryBuilder<Story, Story, QAfterSortBy> sortByPunchlineDesc() {
+  QueryBuilder<Story, Story, QAfterSortBy> sortBylessonDesc() {
     return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'punchline', Sort.desc);
+      return query.addSortBy(r'lesson', Sort.desc);
     });
   }
 
@@ -904,15 +904,15 @@ extension StoryQuerySortThenBy on QueryBuilder<Story, Story, QSortThenBy> {
     });
   }
 
-  QueryBuilder<Story, Story, QAfterSortBy> thenByPunchline() {
+  QueryBuilder<Story, Story, QAfterSortBy> thenBylesson() {
     return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'punchline', Sort.asc);
+      return query.addSortBy(r'lesson', Sort.asc);
     });
   }
 
-  QueryBuilder<Story, Story, QAfterSortBy> thenByPunchlineDesc() {
+  QueryBuilder<Story, Story, QAfterSortBy> thenBylessonDesc() {
     return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'punchline', Sort.desc);
+      return query.addSortBy(r'lesson', Sort.desc);
     });
   }
 
@@ -950,10 +950,10 @@ extension StoryQueryWhereDistinct on QueryBuilder<Story, Story, QDistinct> {
     });
   }
 
-  QueryBuilder<Story, Story, QDistinct> distinctByPunchline(
+  QueryBuilder<Story, Story, QDistinct> distinctBylesson(
       {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
-      return query.addDistinctBy(r'punchline', caseSensitive: caseSensitive);
+      return query.addDistinctBy(r'lesson', caseSensitive: caseSensitive);
     });
   }
 
@@ -990,9 +990,9 @@ extension StoryQueryProperty on QueryBuilder<Story, Story, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Story, String, QQueryOperations> punchlineProperty() {
+  QueryBuilder<Story, String, QQueryOperations> lessonProperty() {
     return QueryBuilder.apply(this, (query) {
-      return query.addPropertyName(r'punchline');
+      return query.addPropertyName(r'lesson');
     });
   }
 

@@ -34,7 +34,7 @@ class _NotesScreenState extends State<NotesScreen> {
     final notes = np.notes;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Notes')),
+      // appBar: AppBar(title: const Text('Notes')),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.note_add),
         onPressed: () {

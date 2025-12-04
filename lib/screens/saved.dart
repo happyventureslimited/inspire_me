@@ -32,7 +32,7 @@ class _SavedScreenState extends State<SavedScreen> {
     final saved = sp.saved;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Saved Stories')),
+      // appBar: AppBar(title: const Text('Saved Stories')),
       body: _loading
           ? const Center(child: CircularProgressIndicator())
           : saved.isEmpty

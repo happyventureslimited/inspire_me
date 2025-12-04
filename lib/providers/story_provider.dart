@@ -88,7 +88,7 @@ class StoryProvider extends ChangeNotifier {
     return stories.where((s) =>
         s.title.toLowerCase().contains(q) ||
         s.content.toLowerCase().contains(q) ||
-        s.punchline.toLowerCase().contains(q) 
+        s.lesson.toLowerCase().contains(q) 
     ).toList();
   }
 

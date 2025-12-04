@@ -50,7 +50,7 @@ class MoreScreen extends StatelessWidget {
     final seedService = SeedService(isarService);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('More')),
+      // appBar: AppBar(title: const Text('More')),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
         child: ListView(
