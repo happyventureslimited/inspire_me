@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 
 class CategoryIcons {
   static final Map<String, IconData> map = {
-    "Motivational": Icons.flash_on,
-    "Success": Icons.emoji_events,
-    "Life": Icons.self_improvement,
-    "Love": Icons.favorite,
-    "Wisdom": Icons.menu_book,
-    "Happiness": Icons.sentiment_satisfied,
-    "Spiritual": Icons.light_mode,
-    "Friendship": Icons.people,
-    "Courage": Icons.shield,
-    "Philosophy": Icons.psychology,
-    "Growth": Icons.trending_up,
-    "Faith": Icons.auto_awesome,
     "Adventure": Icons.explore,
+    "Courage": Icons.shield,
+    "Faith": Icons.auto_awesome,
+    "Friendship": Icons.people,
+    "Growth": Icons.trending_up,
+    "Happiness": Icons.sentiment_satisfied,
     "Inspiration": Icons.bolt,
     "Kindness": Icons.volunteer_activism,
+    "Life": Icons.self_improvement,
+    "Love": Icons.favorite,
+    "Motivational": Icons.flash_on,
+    "Philosophy": Icons.psychology,
+    "Spiritual": Icons.light_mode,
+    "Success": Icons.emoji_events,
+    "Wisdom": Icons.menu_book,
   };
 
   /// Returns an icon for a category.

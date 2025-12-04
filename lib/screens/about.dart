@@ -13,7 +13,7 @@ class AboutScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "InspireMe is a personal motivation and reflection app that provides original stories across multiple categories including Motivation, Love, Wisdom, Happiness, and more.",
+              "Inspire Me is a motivation and reflection app that shares original short stories meant to uplift, guide, and inspire you. It’s a simple way to find encouragement, gain perspective, and bring a little positivity into your day.",          
               style: TextStyle(fontSize: 16, height: 1.3),
             ),
 

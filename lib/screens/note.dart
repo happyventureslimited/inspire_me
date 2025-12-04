@@ -126,9 +126,10 @@ class _NotesScreenState extends State<NotesScreen> {
                       onPressed: () async {
                         final yes = await showConfirmDialog(
                           context: context,
-                          title: "Delete Note?",
+                          title: "Delete Note!",
                           message:
-                              "This will permanently delete the note. Continue?",
+                              "Are you sure?\nThis will permanently delete the note.",
+                          confirmbtn: "Delete"
                         );
                         if (yes) {
                           np.deleteNote(n.id);

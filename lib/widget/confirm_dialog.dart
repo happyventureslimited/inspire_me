@@ -4,6 +4,7 @@ Future<bool> showConfirmDialog({
   required BuildContext context,
   required String title,
   required String message,
+  required String confirmbtn,
 }) async {
   final result = await showDialog<bool>(
     context: context,
@@ -16,7 +17,7 @@ Future<bool> showConfirmDialog({
           onPressed: () => Navigator.pop(context, false),
         ),
         ElevatedButton(
-          child: const Text("Delete"),
+          child: Text(confirmbtn),
           onPressed: () => Navigator.pop(context, true),
         ),
       ],

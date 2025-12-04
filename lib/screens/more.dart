@@ -87,7 +87,7 @@ class MoreScreen extends StatelessWidget {
             ),
             const SizedBox(height: 50),
             SwitchListTile(
-              title: const Text("Dark Mode"),
+              title: Text(context.watch<ThemeProvider>().isDark ? "Dark Mode" : "Light Mode"),
               value: context.watch<ThemeProvider>().isDark,
               onChanged: (value) {
                 context.read<ThemeProvider>().setTheme(
@@ -122,9 +122,10 @@ class MoreScreen extends StatelessWidget {
                     onPressed: () async {
                       final yes = await showConfirmDialog(
                         context: context,
-                        title: "Reset App?",
+                        title: "Reset App!",
                         message:
-                            "This will reset the app and delete all saved stories and notes. Continue?",
+                            "Are you sure?\nThis will reset the app and delete all saved stories and notes.",
+                        confirmbtn: "Continue"
                       );
 
                       if (yes) {
