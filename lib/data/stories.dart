@@ -5,14 +5,14 @@ final List<Story> offlineStories = [
     ..category = 'Motivational'
     ..title = 'The Quiet Climb'
     ..content =
-        '''A hiker once chose the steepest trail on the mountain, not because it was dramatic, but because it was silent. Every step echoed only inside his mind. He learned that progress is not always loud; sometimes it is the quiet rise of your own determination. When he reached the top, no one was watching—yet it was his proudest moment. The climb was worth it because he discovered his strength along the way.'''
+        '''A hiker once chose the steepest trail on the mountain, not because it was dramatic, but because it was silent. Every step echoed only inside his mind. He learned that progress is not always loud; sometimes it is the quiet rise of your own determination. When he reached the top, no one was watching, yet it was his proudest moment. The climb was worth it because he discovered his strength along the way.'''
     ..punchline = 'Your greatest victories happen within.',
 
   Story()
     ..category = 'Motivational'
     ..title = 'The Glass Floor'
     ..content =
-        '''A dancer practiced in a studio with a glass floor that reflected her every mistake. At first she hated it, wanting to hide from imperfection. But over time she realized that seeing her flaws clearly helped her grow. She began to appreciate the reflections, not as failures but as guideposts. Improvement was no longer frightening—it was exciting.'''
+        '''A dancer practiced in a studio with a glass floor that reflected her every mistake. At first she hated it, wanting to hide from imperfection. But over time she realized that seeing her flaws clearly helped her grow. She began to appreciate the reflections, not as failures but as guideposts. Improvement was no longer frightening, it was exciting.'''
     ..punchline = 'Facing your flaws is the fastest way to rise above them.',
 
   Story()
@@ -33,28 +33,28 @@ final List<Story> offlineStories = [
     ..category = 'Motivational'
     ..title = 'The Stone and the Stream'
     ..content =
-        '''A traveler once sat by a stream and watched water slip around a stone. The stone resisted, unmoving, while the water kept flowing, shaping its edges little by little. The traveler realized that effort is not always loud or heroic—sometimes it is the quiet persistence of showing up again and again. You may feel like the stone—stuck, unchanged—but every small action shapes your future just as water shapes rock. Progress is slow until suddenly it’s obvious. Keep flowing.'''
+        '''A traveler once sat by a stream and watched water slip around a stone. The stone resisted, unmoving, while the water kept flowing, shaping its edges little by little. The traveler realized that effort is not always loud or heroic, sometimes it is the quiet persistence of showing up again and again. You may feel like the stone-stuck, unchanged, but every small action shapes your future just as water shapes rock. Progress is slow until suddenly it’s obvious. Keep flowing.'''
     ..punchline = 'Small efforts shape great outcomes.',
 
   Story()
     ..category = 'Motivational'
     ..title = 'The Lantern Carrier'
     ..content =
-        '''A young runner trained each dawn, carrying a lantern because the path was always dark. Others mocked her, saying it was pointless to run when she couldn’t even see the finish line. But she smiled, because her goal was never the finish line—it was becoming the kind of person who keeps moving in the dark. Over time, her steps grew stronger, her breath steadier, and one morning she realized she no longer needed the lantern. She had become the light.'''
+        '''A young runner trained each dawn, carrying a lantern because the path was always dark. Others mocked her, saying it was pointless to run when she couldn’t even see the finish line. But she smiled, because her goal was never the finish line; it was becoming the kind of person who keeps moving in the dark. Over time, her steps grew stronger, her breath steadier, and one morning she realized she no longer needed the lantern. She had become the light.'''
     ..punchline = 'Those who train in darkness shine in daylight.',
 
   Story()
     ..category = 'Motivational'
     ..title = 'One More Push'
     ..content =
-        '''A mountain climber reached a point where the peak seemed impossibly far. Exhausted, he wanted to turn back. But then he remembered every challenge he had overcome to reach that moment. So he told himself three quiet words: “One more push.” He repeated them again and again, each step a promise, each breath a choice. When he finally reached the summit, he realized the mountain had never asked for perfection—only persistence.'''
+        '''A mountain climber reached a point where the peak seemed impossibly far. Exhausted, he wanted to turn back. But then he remembered every challenge he had overcome to reach that moment. So he told himself three quiet words: “One more push.” He repeated them again and again, each step a promise, each breath a choice. When he finally reached the summit, he realized the mountain had never asked for perfection, only persistence.'''
     ..punchline = 'Great journeys are conquered one small push at a time.',
 
   Story()
     ..category = 'Motivational'
     ..title = 'Seeds in Your Pocket'
     ..content =
-        '''A gardener always carried seeds in her pocket, planting them wherever she wandered. Some sprouted, many didn’t, but she never stopped sowing. One day, a stranger thanked her—the path was lined with flowers that brightened many lives. She hadn’t realized her small acts had grown into something beautiful. The seeds you carry—your ideas, your effort, your kindness—may not bloom immediately, but they matter more than you know. Keep planting.'''
+        '''A gardener always carried seeds in her pocket, planting them wherever she wandered. Some sprouted, many didn’t, but she never stopped sowing. One day, a stranger thanked her, the path was lined with flowers that brightened many lives. She hadn’t realized her small acts had grown into something beautiful. The seeds you carry, your ideas, your effort, your kindness may not bloom immediately, but they matter more than you know. Keep planting.'''
     ..punchline = 'Plant small efforts; harvest unexpected impact.',
 
   Story()
@@ -68,7 +68,7 @@ final List<Story> offlineStories = [
     ..category = 'Motivational'
     ..title = 'The Worn Shoes'
     ..content =
-        '''A student kept a pair of worn-out shoes on her shelf. They reminded her of the miles she had walked—through doubt, fear, and failure. Whenever she felt discouraged, she looked at them and remembered she had survived every challenge so far. Strength isn’t something you suddenly gain; it’s something your journey has already proven you have.'''
+        '''A student kept a pair of worn-out shoes on her shelf. They reminded her of the miles she had walked: through doubt, fear, and failure. Whenever she felt discouraged, she looked at them and remembered she had survived every challenge so far. Strength isn’t something you suddenly gain; it’s something your journey has already proven you have.'''
     ..punchline = 'Your past struggles are proof of your present strength.',
 
   Story()
@@ -90,7 +90,7 @@ final List<Story> offlineStories = [
     ..title = 'The Violin’s Echo'
     ..content =
         '''A violinist practiced alone for years, feeling unseen and unheard. One evening, a neighbor knocked on the door and said her music had helped him through difficult nights. She realized that even when you feel unnoticed, your effort might be lifting someone you’ve never met. You may not always see the impact of your work, but it echoes.'''
-    ..punchline = 'Your effort matters—even when no one is watching.',
+    ..punchline = 'Your effort matters even when no one is watching.',
 
   Story()
     ..category = 'Motivational'
@@ -103,28 +103,28 @@ final List<Story> offlineStories = [
     ..category = 'Success'
     ..title = 'The Last Seed'
     ..content =
-        '''A farmer saved one final seed after a season of failure. Instead of giving up, he planted it with patience and care. Days passed with no sign of growth, but he continued watering. Eventually, a strong sprout emerged—healthier than all the crops before it. He realized success often grows from the smallest remaining hope.'''
+        '''A farmer saved one final seed after a season of failure. Instead of giving up, he planted it with patience and care. Days passed with no sign of growth, but he continued watering. Eventually, a strong sprout emerged, healthier than all the crops before it. He realized success often grows from the smallest remaining hope.'''
     ..punchline = 'Great outcomes can rise from what little you have left.',
 
   Story()
     ..category = 'Success'
     ..title = 'One More Brushstroke'
     ..content =
-        '''An artist struggled to finish a painting. She doubted the colors, the shapes, even her ability. One evening, she told herself, “Just one more brushstroke.” That single action led to another and another until the canvas came alive. Success wasn’t sudden—it was a collection of small decisions to continue.'''
+        '''An artist struggled to finish a painting. She doubted the colors, the shapes, even her ability. One evening, she told herself, “Just one more brushstroke.” That single action led to another and another until the canvas came alive. Success wasn’t sudden, it was a collection of small decisions to continue.'''
     ..punchline = 'Progress is built one tiny choice at a time.',
 
   Story()
     ..category = 'Success'
     ..title = 'The Open Door'
     ..content =
-        '''A student applied for opportunities and faced rejection each time. Instead of stopping, she treated every “no” as a lesson. She refined her skills, improved her letters, and tried again. Later, one acceptance changed her entire path. She realized that success doesn’t always come from the first door you knock—it comes from refusing to stop knocking.'''
+        '''A student applied for opportunities and faced rejection each time. Instead of stopping, she treated every “no” as a lesson. She refined her skills, improved her letters, and tried again. Later, one acceptance changed her entire path. She realized that success doesn’t always come from the first door you knock, it comes from refusing to stop knocking.'''
     ..punchline = 'Keep trying until the right door opens.',
 
   Story()
     ..category = 'Success'
     ..title = 'The Sandcastle Challenge'
     ..content =
-        '''A child entered a sandcastle contest but kept rebuilding when waves knocked his work down. Others quit, but he adapted—moving farther from the water, shaping stronger towers, working calmly. When the tide settled, his castle stood tall while others had given up. Success favored his willingness to adjust, not perfection.'''
+        '''A child entered a sandcastle contest but kept rebuilding when waves knocked his work down. Others quit, but he adapted, moving farther from the water, shaping stronger towers, working calmly. When the tide settled, his castle stood tall while others had given up. Success favored his willingness to adjust, not perfection.'''
     ..punchline = 'Adaptation is often more powerful than talent.',
 
   Story()
@@ -139,7 +139,7 @@ final List<Story> offlineStories = [
     ..category = 'Success'
     ..title = 'The Paper Bird'
     ..content =
-        '''A girl learned origami and struggled to fold a paper bird. Her first attempts were uneven, then crooked, then torn. Instead of quitting, she practiced every day. Weeks later, she created a flawless bird. What impressed her teacher most wasn’t the final piece—it was the pile of failed ones that proved her dedication.'''
+        '''A girl learned origami and struggled to fold a paper bird. Her first attempts were uneven, then crooked, then torn. Instead of quitting, she practiced every day. Weeks later, she created a flawless bird. What impressed her teacher most wasn’t the final piece, it was the pile of failed ones that proved her dedication.'''
     ..punchline = 'Success grows from repeated attempts, not instant skill.',
 
   Story()
@@ -181,7 +181,7 @@ final List<Story> offlineStories = [
     ..category = 'Success'
     ..title = 'The Clay Bowl'
     ..content =
-        '''A potter crafted a clay bowl that cracked during drying. Instead of throwing it away, she reshaped it, strengthened the weak points, and tried again. The second version became her best work. She learned that failure isn’t final—it’s feedback.'''
+        '''A potter crafted a clay bowl that cracked during drying. Instead of throwing it away, she reshaped it, strengthened the weak points, and tried again. The second version became her best work. She learned that failure isn’t final, it’s feedback.'''
     ..punchline = 'Success often arrives on the second attempt.',
 
   Story()
@@ -210,7 +210,7 @@ final List<Story> offlineStories = [
     ..category = 'Life'
     ..title = 'The Patchwork Quilt'
     ..content =
-        '''A grandmother stitched a quilt using scraps from different moments of her life—old shirts, festival cloth, pieces from her children’s clothes. Each patch looked ordinary alone, but together they formed something warm and beautiful. She told her grandson that life is the same: little moments don’t always look special until you step back and see the whole picture.'''
+        '''A grandmother stitched a quilt using scraps from different moments of her life: old shirts, festival cloth, pieces from her children’s clothes. Each patch looked ordinary alone, but together they formed something warm and beautiful. She told her grandson that life is the same: little moments don’t always look special until you step back and see the whole picture.'''
     ..punchline =
         'Life becomes beautiful when you appreciate each piece of it.',
 
@@ -218,7 +218,7 @@ final List<Story> offlineStories = [
     ..category = 'Life'
     ..title = 'The Two Roads'
     ..content =
-        '''A traveler reached a fork in the road. One path was smooth and crowded; the other was rough and quiet. He chose the difficult one, discovering views the other travelers never saw—hidden waterfalls and peaceful fields. He realized that life’s richest experiences often come from paths people hesitate to take.'''
+        '''A traveler reached a fork in the road. One path was smooth and crowded; the other was rough and quiet. He chose the difficult one, discovering views the other travelers never saw; hidden waterfalls and peaceful fields. He realized that life’s richest experiences often come from paths people hesitate to take.'''
     ..punchline =
         'Choose the path that helps you grow, not just the one that’s easiest.',
 
@@ -234,21 +234,21 @@ final List<Story> offlineStories = [
     ..category = 'Life'
     ..title = 'The Library Card'
     ..content =
-        '''A boy received a library card and was amazed at how many stories he could borrow. He learned lessons from people he had never met—scientists, explorers, poets. Through reading, he realized that life offers endless learning to anyone willing to open a new page.'''
+        '''A boy received a library card and was amazed at how many stories he could borrow. He learned lessons from people he had never met: scientists, explorers, poets. Through reading, he realized that life offers endless learning to anyone willing to open a new page.'''
     ..punchline = 'Life expands when you stay curious.',
 
   Story()
     ..category = 'Life'
     ..title = 'The Garden of Days'
     ..content =
-        '''A woman planted a garden and noticed that different plants grew at different speeds. Some sprouted overnight; others took months. She realized life works the same way—people and dreams grow at their own pace. Comparing them only steals joy.'''
+        '''A woman planted a garden and noticed that different plants grew at different speeds. Some sprouted overnight; others took months. She realized life works the same way people and dreams grow at their own pace. Comparing them only steals joy.'''
     ..punchline = 'Life blooms in its own time.',
 
   Story()
     ..category = 'Life'
     ..title = 'The Clockmaker’s Lesson'
     ..content =
-        '''A clockmaker explained to his apprentice that every gear inside a clock matters, even the tiny ones no one sees. If one stops, the whole system fails. He taught her that life works the same way—small habits and quiet moments matter just as much as the big ones.'''
+        '''A clockmaker explained to his apprentice that every gear inside a clock matters, even the tiny ones no one sees. If one stops, the whole system fails. He taught her that life works the same way small habits and quiet moments matter just as much as the big ones.'''
     ..punchline = 'Life runs smoothly when you value the small things.',
 
   Story()
@@ -262,14 +262,14 @@ final List<Story> offlineStories = [
     ..category = 'Life'
     ..title = 'The Broken Plate'
     ..content =
-        '''A child accidentally broke a plate and was upset. Her father calmly helped her clean the pieces and simply said, “What matters is how we respond.” She realized life isn’t about avoiding mistakes—it’s about learning how to fix what breaks.'''
+        '''A child accidentally broke a plate and was upset. Her father calmly helped her clean the pieces and simply said, “What matters is how we respond.” She realized life isn’t about avoiding mistakes, it’s about learning how to fix what breaks.'''
     ..punchline = 'Life improves when you handle mistakes with patience.',
 
   Story()
     ..category = 'Life'
     ..title = 'The Echo Hill'
     ..content =
-        '''A boy climbed a hill and shouted his name, surprised when it echoed back. His father explained that life echoes too—the kindness or anger you send out often returns to you. The boy grew mindful of his words from that day onward.'''
+        '''A boy climbed a hill and shouted his name, surprised when it echoed back. His father explained that life echoes too, the kindness or anger you send out often returns to you. The boy grew mindful of his words from that day onward.'''
     ..punchline = 'What you give to life often comes back to you.',
 
   Story()
@@ -277,13 +277,13 @@ final List<Story> offlineStories = [
     ..title = 'The Slow River'
     ..content =
         '''A young man impatiently watched a slow-moving river and wished it would rush forward. An older fisherman laughed and told him that the river still reaches the ocean, just in its own way. It reminded the young man that life unfolds naturally, not on demand.'''
-    ..punchline = 'Life has its own pace—trust it.',
+    ..punchline = 'Life has its own pace, trust it.',
 
   Story()
     ..category = 'Life'
     ..title = 'Feathers in the Wind'
     ..content =
-        '''A girl released a handful of feathers into the wind and watched them scatter. Her mother told her words are similar—once spoken, they travel far and can’t be taken back. The girl became more thoughtful with her speech, realizing life is shaped by the things we say.'''
+        '''A girl released a handful of feathers into the wind and watched them scatter. Her mother told her words are similar; once spoken, they travel far and can’t be taken back. The girl became more thoughtful with her speech, realizing life is shaped by the things we say.'''
     ..punchline = 'Life becomes gentler when your words are kind.',
 
   Story()
@@ -299,27 +299,27 @@ final List<Story> offlineStories = [
     ..content =
         '''A man missed his bus and felt frustrated. While waiting for the next one, he struck up a conversation with a stranger who later became a close friend. He realized life’s delays sometimes lead you to the right people or places.'''
     ..punchline =
-        'Not every delay is a setback—some guide you to something better.',
+        'Not every delay is a setback, some guide you to something better.',
 
   Story()
     ..category = 'Life'
     ..title = 'The Chalkboard'
     ..content =
         '''A teacher erased a chalkboard full of old lessons, preparing it for the next day’s learning. She explained to her students that life also gives us chances to start fresh. Each day is a clean surface waiting for our choices.'''
-    ..punchline = 'Life gives you a new start each day—use it well.',
+    ..punchline = 'Life gives you a new start each day, use it well.',
 
   Story()
     ..category = 'Life'
     ..title = 'The Two Cups of Tea'
     ..content =
         '''Two friends met weekly for tea. One rushed through life and often complained; the other paused to appreciate small joys. Over time, the first friend noticed how the calmer one seemed more content. He realized life tastes better when savored slowly.'''
-    ..punchline = 'Slow down—life’s sweetness is easier to notice that way.',
+    ..punchline = 'Slow down, life’s sweetness is easier to notice that way.',
 
   Story()
     ..category = 'Love'
     ..title = 'The Warm Scarf'
     ..content =
-        '''A mother knitted a scarf for her son using yarn left from different projects. Each color carried a memory—his first day of school, his first lost tooth, his first success. When he wore it, he felt warm not just from the cloth, but from the care woven into it. He realized love is often felt through the small things people do quietly.'''
+        '''A mother knitted a scarf for her son using yarn left from different projects. Each color carried a memory: his first day of school, his first lost tooth, his first success. When he wore it, he felt warm not just from the cloth, but from the care woven into it. He realized love is often felt through the small things people do quietly.'''
     ..punchline = 'Love is warmth woven into ordinary moments.',
 
   Story()
@@ -333,14 +333,14 @@ final List<Story> offlineStories = [
     ..category = 'Love'
     ..title = 'The Repaired Kite'
     ..content =
-        '''A boy tore his favorite kite during a windy afternoon. His father patiently helped him patch the holes and straighten the sticks. When the kite flew even better than before, the boy realized love is not about perfection—it is about mending what matters.'''
+        '''A boy tore his favorite kite during a windy afternoon. His father patiently helped him patch the holes and straighten the sticks. When the kite flew even better than before, the boy realized love is not about perfection, it is about mending what matters.'''
     ..punchline = 'Love repairs what others might throw away.',
 
   Story()
     ..category = 'Love'
     ..title = 'The Sandwich Note'
     ..content =
-        '''A student always found small notes in his lunchbox—simple messages like “You’re doing great” or “Have a bright day.” He kept them all in a jar. Years later, he opened the jar and felt the same warmth. He realized love often arrives in tiny reminders that you matter.'''
+        '''A student always found small notes in his lunchbox; simple messages like “You’re doing great” or “Have a bright day.” He kept them all in a jar. Years later, he opened the jar and felt the same warmth. He realized love often arrives in tiny reminders that you matter.'''
     ..punchline = 'Love is found in the quiet reassurances we give each other.',
 
   Story()
@@ -361,14 +361,14 @@ final List<Story> offlineStories = [
     ..category = 'Love'
     ..title = 'The Little Plant'
     ..content =
-        '''A child planted a small seed and watered it every day. As it sprouted and grew, she realized caring for something teaches you patience, attention, and kindness. She understood that love grows the same way—with steady, gentle care.'''
+        '''A child planted a small seed and watered it every day. As it sprouted and grew, she realized caring for something teaches you patience, attention, and kindness. She understood that love grows the same way: with steady, gentle care.'''
     ..punchline = 'Love grows through daily care.',
 
   Story()
     ..category = 'Love'
     ..title = 'The Borrowed Book'
     ..content =
-        '''A boy lent his favorite book to a friend, even though he treasured it. When the friend returned it carefully wrapped, the boy realized trust is a part of love—giving something precious and believing it will be respected.'''
+        '''A boy lent his favorite book to a friend, even though he treasured it. When the friend returned it carefully wrapped, the boy realized trust is a part of love; giving something precious and believing it will be respected.'''
     ..punchline = 'Love trusts and is gentle with what it receives.',
 
   Story()
@@ -382,7 +382,7 @@ final List<Story> offlineStories = [
     ..category = 'Love'
     ..title = 'The Evening Walk'
     ..content =
-        '''Every evening, an elderly couple walked slowly through the park. They didn’t talk much—they simply shared the moment. Their quiet companionship showed younger onlookers that love doesn’t always need grand expressions; sometimes presence is enough.'''
+        '''Every evening, an elderly couple walked slowly through the park. They didn’t talk much, they simply shared the moment. Their quiet companionship showed younger onlookers that love doesn’t always need grand expressions; sometimes presence is enough.'''
     ..punchline = 'Love is often felt most in peaceful togetherness.',
 
   Story()
@@ -424,7 +424,7 @@ final List<Story> offlineStories = [
     ..category = 'Wisdom'
     ..title = 'The Listener of Trees'
     ..content =
-        '''Amara often rushed through life, making decisions before hearing anything but her own thoughts. One afternoon, she sat beneath an old tree and noticed how still it remained, how patient it waited for the wind before responding. She wondered how many mistakes she could avoid if she listened before reacting. That day she tried it — pausing, observing, hearing more than just the noise. Slowly, understanding replaced assumption.'''
+        '''Amara often rushed through life, making decisions before hearing anything but her own thoughts. One afternoon, she sat beneath an old tree and noticed how still it remained, how patient it waited for the wind before responding. She wondered how many mistakes she could avoid if she listened before reacting. That day she tried it: pausing, observing, hearing more than just the noise. Slowly, understanding replaced assumption.'''
     ..punchline = 'Wisdom begins with listening, not speaking.',
 
   Story()
@@ -452,14 +452,14 @@ final List<Story> offlineStories = [
     ..category = 'Wisdom'
     ..title = 'Shadows That Teach'
     ..content =
-        '''On a sunny day, Mira noticed her long shadow stretching across the ground. She realized that shadows appear only when there is light. She thought of challenges the same way — dark shapes created not to scare her, but to show the direction of the light behind her.'''
+        '''On a sunny day, Mira noticed her long shadow stretching across the ground. She realized that shadows appear only when there is light. She thought of challenges the same way; dark shapes created not to scare her, but to show the direction of the light behind her.'''
     ..punchline = 'Even your struggles reveal something bright.',
 
   Story()
     ..category = 'Wisdom'
     ..title = 'The Slow Path'
     ..content =
-        '''A young traveler always chose shortcuts, proud of reaching places quickly. One day he got lost in an unfamiliar forest. An old guide later told him, “The slow path teaches what the fast path hides.” The traveler noticed that the longer roads revealed more — people, ideas, patience, and understanding.'''
+        '''A young traveler always chose shortcuts, proud of reaching places quickly. One day he got lost in an unfamiliar forest. An old guide later told him, “The slow path teaches what the fast path hides.” The traveler noticed that the longer roads revealed more: people, ideas, patience, and understanding.'''
     ..punchline = 'Not everything worth learning comes quickly.',
 
   Story()
@@ -473,7 +473,7 @@ final List<Story> offlineStories = [
     ..category = 'Wisdom'
     ..title = 'The Broken Pencil'
     ..content =
-        '''A boy snapped his pencil in frustration during homework. His teacher calmly handed him a sharpener and said, “Broken doesn’t mean useless. It means you need reshaping.” The boy understood that mistakes and setbacks don’t define him — they refine him.'''
+        '''A boy snapped his pencil in frustration during homework. His teacher calmly handed him a sharpener and said, “Broken doesn’t mean useless. It means you need reshaping.” The boy understood that mistakes and setbacks don’t define him, they refine him.'''
     ..punchline = 'Growth often begins at the point of breaking.',
 
   Story()
@@ -502,7 +502,7 @@ final List<Story> offlineStories = [
     ..category = 'Wisdom'
     ..title = 'The Melted Ice'
     ..content =
-        '''When Nia’s ice cream melted, she became upset. Her brother said gently, “Some things disappear because they were meant to be enjoyed, not stored.” She realized that moments are the same — precious because they pass. From then on, she lived more attentively, savoring the now.'''
+        '''When Nia’s ice cream melted, she became upset. Her brother said gently, “Some things disappear because they were meant to be enjoyed, not stored.” She realized that moments are the same; precious because they pass. From then on, she lived more attentively, savoring the now.'''
     ..punchline = 'Wisdom is knowing what is temporary and appreciating it.',
 
   Story()
@@ -516,28 +516,28 @@ final List<Story> offlineStories = [
     ..category = 'Wisdom'
     ..title = 'The Clean Window'
     ..content =
-        '''A woman often criticized her neighbor’s messy yard. One morning, she cleaned her own window and realized the yard had been tidy all along — it was her view that was clouded. She learned that judgment is often a reflection, not a truth.'''
+        '''A woman often criticized her neighbor’s messy yard. One morning, she cleaned her own window and realized the yard had been tidy all along; it was her view that was clouded. She learned that judgment is often a reflection, not a truth.'''
     ..punchline = 'Before judging others, clear your own perspective.',
 
   Story()
     ..category = 'Wisdom'
     ..title = 'The Candle and the Flame'
     ..content =
-        '''Two candles sat side by side. One feared being lit, afraid it would burn out. The other welcomed the flame and filled the room with light. In the end, both melted — but only one brightened the world before it faded.'''
+        '''Two candles sat side by side. One feared being lit, afraid it would burn out. The other welcomed the flame and filled the room with light. In the end, both melted but only one brightened the world before it faded.'''
     ..punchline = 'Life is meant to be lived, not preserved.',
 
   Story()
     ..category = 'Happiness'
     ..title = 'The Small Joy Collector'
     ..content =
-        '''Lila always waited for big miracles to feel happy. One day, her uncle gave her a small notebook and said, “Collect tiny joys.” She wrote down warm sunlight, a friendly smile, the smell of bread, a bird hopping near her foot. Soon she realized happiness wasn’t rare at all — she had just never paid attention to it.'''
+        '''Lila always waited for big miracles to feel happy. One day, her uncle gave her a small notebook and said, “Collect tiny joys.” She wrote down warm sunlight, a friendly smile, the smell of bread, a bird hopping near her foot. Soon she realized happiness wasn’t rare at all, she had just never paid attention to it.'''
     ..punchline = 'Happiness grows when you notice the little things.',
 
   Story()
     ..category = 'Happiness'
     ..title = 'The Borrowed Smile'
     ..content =
-        '''A tired cashier forced a smile for each customer. One evening, a boy returned with a flower and said, “You smiled at my mom today. It made her happy.” The cashier suddenly felt lighter. She realized that joy is not diminished when shared — it multiplies.'''
+        '''A tired cashier forced a smile for each customer. One evening, a boy returned with a flower and said, “You smiled at my mom today. It made her happy.” The cashier suddenly felt lighter. She realized that joy is not diminished when shared, it multiplies.'''
     ..punchline = 'A simple smile can carry someone through their day.',
 
   Story()
@@ -551,14 +551,14 @@ final List<Story> offlineStories = [
     ..category = 'Happiness'
     ..title = 'The Dancing Raindrops'
     ..content =
-        '''When a storm ruined her picnic plans, Mina sighed in disappointment. Then she noticed a child laughing while jumping in puddles. The rain hadn’t changed — only their attitude had. Mina realized happiness often depends more on perspective than on circumstances.'''
+        '''When a storm ruined her picnic plans, Mina sighed in disappointment. Then she noticed a child laughing while jumping in puddles. The rain hadn’t changed, only their attitude had. Mina realized happiness often depends more on perspective than on circumstances.'''
     ..punchline = 'Joy is possible even in unexpected moments.',
 
   Story()
     ..category = 'Happiness'
     ..title = 'The Cloud Watchers'
     ..content =
-        '''Two friends lay on the grass watching clouds drift by. They had no schedule, no hurry, no pressure — just sky and conversation. They realized happiness sometimes arrives quietly, in moments where nothing is demanded and everything is appreciated.'''
+        '''Two friends lay on the grass watching clouds drift by. They had no schedule, no hurry, no pressure; just sky and conversation. They realized happiness sometimes arrives quietly, in moments where nothing is demanded and everything is appreciated.'''
     ..punchline = 'Simple moments can be the most meaningful.',
 
   Story()
@@ -572,21 +572,21 @@ final List<Story> offlineStories = [
     ..category = 'Happiness'
     ..title = 'The Overflowing Jar'
     ..content =
-        '''A boy complained that his jar of marbles wasn’t full enough. His grandfather smiled and poured in air, saying, “Now it’s full.” The boy laughed. “Air doesn’t count!” “Of course it does,” said the grandfather. “Some good things can’t be seen but still fill your life — like love, laughter, and peace.”'''
+        '''A boy complained that his jar of marbles wasn’t full enough. His grandfather smiled and poured in air, saying, “Now it’s full.” The boy laughed. “Air doesn’t count!” “Of course it does,” said the grandfather. “Some good things like love, laughter, and peace can’t be seen but still fill your life.”'''
     ..punchline = 'Not all happiness is visible, but it still matters.',
 
   Story()
     ..category = 'Happiness'
     ..title = 'The Morning Window'
     ..content =
-        '''Every morning, a woman opened her window and whispered thank you for one thing — anything at all. Over time, gratitude became her way of seeing the world. Even on difficult days, she found something small to appreciate. Happiness followed more easily once she created space for it.'''
+        '''Every morning, a woman opened her window and whispered thank you for one thing, anything at all. Over time, gratitude became her way of seeing the world. Even on difficult days, she found something small to appreciate. Happiness followed more easily once she created space for it.'''
     ..punchline = 'Gratitude invites joy into your day.',
 
   Story()
     ..category = 'Happiness'
     ..title = 'The Gift of Time'
     ..content =
-        '''A busy father felt guilty about not buying his daughter expensive toys. One afternoon, he simply sat with her and played. Her laughter filled the room. He realized she had never needed the toys — she only needed him. Happiness, he learned, often comes from presence, not possessions.'''
+        '''A busy father felt guilty about not buying his daughter expensive toys. One afternoon, he simply sat with her and played. Her laughter filled the room. He realized she had never needed the toys, she only needed him. Happiness, he learned, often comes from presence, not possessions.'''
     ..punchline = 'Your time is more valuable than anything you can buy.',
 
   Story()
@@ -614,14 +614,14 @@ final List<Story> offlineStories = [
     ..category = 'Happiness'
     ..title = 'The Lemonade Stand'
     ..content =
-        '''Two children opened a lemonade stand. They made little money, but they laughed, joked, and shared stories with strangers. Later, one child said, “We didn’t get rich, but today felt rich.” They learned that happiness isn’t measured by gain — but by experience.'''
+        '''Two children opened a lemonade stand. They made little money, but they laughed, joked, and shared stories with strangers. Later, one child said, “We didn’t get rich, but today felt rich.” They learned that happiness isn’t measured by gain but by experience.'''
     ..punchline = 'Joy often comes from the experience, not the result.',
 
   Story()
     ..category = 'Happiness'
     ..title = 'The Quiet Evening'
     ..content =
-        '''After a busy week, Ana sat quietly with a book and a warm drink. She realized she didn’t need excitement to feel good — peace was a form of happiness too.'''
+        '''After a busy week, Ana sat quietly with a book and a warm drink. She realized she didn’t need excitement to feel good, peace was a form of happiness too.'''
     ..punchline = 'Calm can be just as joyful as excitement.',
 
   Story()
@@ -636,7 +636,7 @@ final List<Story> offlineStories = [
     ..category = 'Spiritual'
     ..title = 'The Quiet Light'
     ..content =
-        '''A young woman walked through a difficult season and felt completely lost. One evening she lit a small candle and noticed how its soft glow filled the room. She realized she didn’t need a blazing sun to guide her—sometimes a gentle light is enough to take the next step.'''
+        '''A young woman walked through a difficult season and felt completely lost. One evening she lit a small candle and noticed how its soft glow filled the room. She realized she didn’t need a blazing sun to guide her, sometimes a gentle light is enough to take the next step.'''
     ..punchline = 'Even the smallest light can guide a weary heart.',
 
   Story()
@@ -657,7 +657,7 @@ final List<Story> offlineStories = [
     ..category = 'Spiritual'
     ..title = 'The Morning Prayer'
     ..content =
-        '''Every dawn, a woman whispered a simple prayer of gratitude before starting her day. She didn’t ask for much—just clarity, strength, and a gentle heart. Over time, she noticed her days felt calmer. Gratitude had become her anchor.'''
+        '''Every dawn, a woman whispered a simple prayer of gratitude before starting her day. She didn’t ask for much; just clarity, strength, and a gentle heart. Over time, she noticed her days felt calmer. Gratitude had become her anchor.'''
     ..punchline = 'A grateful heart turns ordinary days into blessings.',
 
   Story()
@@ -665,7 +665,7 @@ final List<Story> offlineStories = [
     ..title = 'The Hidden Path'
     ..content =
         '''A traveler became frustrated when her planned route was blocked. Forced to take a detour, she discovered a breathtaking valley she never knew existed. She realized that sometimes life redirects us not to punish us but to reveal a better way.'''
-    ..punchline = 'Not every detour is a delay—some are guidance.',
+    ..punchline = 'Not every detour is a delay, some are guidance.',
 
   Story()
     ..category = 'Spiritual'
@@ -678,7 +678,7 @@ final List<Story> offlineStories = [
     ..category = 'Spiritual'
     ..title = 'The Candle Exchange'
     ..content =
-        '''Two neighbors shared a tradition—when one felt down, the other lit a candle in their window. They never discussed it, but each glow reminded them they were supported. They learned that spiritual strength often comes through quiet acts of love.'''
+        '''Two neighbors shared a tradition. When one felt down, the other lit a candle in their window. They never discussed it, but each glow reminded them they were supported. They learned that spiritual strength often comes through quiet acts of love.'''
     ..punchline = 'You can brighten someone’s life without saying a word.',
 
   Story()
@@ -699,7 +699,7 @@ final List<Story> offlineStories = [
     ..category = 'Spiritual'
     ..title = 'The Open Hands'
     ..content =
-        '''A woman clung tightly to her worries, believing that letting go meant losing control. One day a mentor told her, “Hands that cling cannot receive.” She slowly released her burdens and felt an unfamiliar lightness—peace was waiting where fear once lived.'''
+        '''A woman clung tightly to her worries, believing that letting go meant losing control. One day a mentor told her, “Hands that cling cannot receive.” She slowly released her burdens and felt an unfamiliar lightness; peace was waiting where fear once lived.'''
     ..punchline = 'Letting go makes room for peace.',
 
   Story()
@@ -741,14 +741,14 @@ final List<Story> offlineStories = [
     ..category = 'Kindness'
     ..title = 'The Extra Chair'
     ..content =
-        '''Every morning, Mrs. Lemi placed an extra chair outside her small bakery. She never announced why, and she never explained it to customers. One rainy afternoon, a shivering boy sat in it, unsure if he was allowed. She stepped out with a warm pastry and a towel, saying, “This chair is for whoever needs it today.” Word spread, and soon the chair became a symbol in the neighborhood—a reminder that kindness doesn’t need applause, only intention.'''
+        '''Every morning, Mrs. Lemi placed an extra chair outside her small bakery. She never announced why, and she never explained it to customers. One rainy afternoon, a shivering boy sat in it, unsure if he was allowed. She stepped out with a warm pastry and a towel, saying, “This chair is for whoever needs it today.” Word spread, and soon the chair became a symbol in the neighborhood; a reminder that kindness doesn’t need applause, only intention.'''
     ..punchline = 'A small act becomes big when it meets someone who needs it.',
 
   Story()
     ..category = 'Kindness'
     ..title = 'The Shared Umbrella'
     ..content =
-        '''On a stormy walk home, Maya noticed a girl struggling with books under the rain. Without thinking twice, Maya covered them both with her umbrella. They talked the whole way, discovering they lived only two streets apart. Later, the girl said it was the first time anyone had stood beside her when she felt invisible. Maya realized kindness isn’t always heroic—it’s choosing to make someone feel seen.'''
+        '''On a stormy walk home, Maya noticed a girl struggling with books under the rain. Without thinking twice, Maya covered them both with her umbrella. They talked the whole way, discovering they lived only two streets apart. Later, the girl said it was the first time anyone had stood beside her when she felt invisible. Maya realized kindness isn’t always heroic, it’s choosing to make someone feel seen.'''
     ..punchline = 'Kindness begins with noticing.',
 
   Story()
@@ -763,7 +763,7 @@ final List<Story> offlineStories = [
     ..category = 'Kindness'
     ..title = 'The Library Bookmark'
     ..content =
-        '''Someone started leaving homemade bookmarks inside library books. Each one carried little messages like “You’re doing your best” and “Your story matters.” People began returning books with their own added notes, turning the shelf into a quiet exchange of encouragement. Kindness became contagious—not through noise, but through paper whispers passed from hand to hand.'''
+        '''Someone started leaving homemade bookmarks inside library books. Each one carried little messages like “You’re doing your best” and “Your story matters.” People began returning books with their own added notes, turning the shelf into a quiet exchange of encouragement. Kindness became contagious; not through noise, but through paper whispers passed from hand to hand.'''
     ..punchline = 'Kindness grows when it’s shared quietly.',
 
   Story()
@@ -777,7 +777,7 @@ final List<Story> offlineStories = [
     ..category = 'Kindness'
     ..title = 'A Seat for a Stranger'
     ..content =
-        '''On a long bus ride, a tired mother with a sleeping child stood quietly, hoping for a place to rest. A young man immediately gave up his seat. When she thanked him, he shook his head and said, “Someone once did it for me.” Kindness doesn’t need a reason—it only needs memory.'''
+        '''On a long bus ride, a tired mother with a sleeping child stood quietly, hoping for a place to rest. A young man immediately gave up his seat. When she thanked him, he shook his head and said, “Someone once did it for me.” Kindness doesn’t need a reason, it only needs memory.'''
     ..punchline = 'A kindness received becomes a kindness returned.',
 
   Story()
@@ -798,8 +798,8 @@ final List<Story> offlineStories = [
     ..category = 'Kindness'
     ..title = 'The Repaired Kite'
     ..content =
-        '''A little boy cried when his kite tore on a tree. An older neighbor picked it up, took it home, and carefully patched it with spare cloth. The boy was shocked—he thought it was beyond saving. “Everything flies again with a little help,” the neighbor smiled.'''
-    ..punchline = 'Kindness helps things—and people—rise again.',
+        '''A little boy cried when his kite tore on a tree. An older neighbor picked it up, took it home, and carefully patched it with spare cloth. The boy was shocked, he thought it was beyond saving. “Everything flies again with a little help,” the neighbor smiled.'''
+    ..punchline = 'Kindness helps things and people rise again.',
 
   Story()
     ..category = 'Kindness'
@@ -821,7 +821,7 @@ final List<Story> offlineStories = [
     ..category = 'Kindness'
     ..title = 'The Morning Greeting'
     ..content =
-        '''At a busy train station, an elderly man greeted everyone who passed by with a cheerful “Good morning!” Some ignored him, some smiled, some looked surprised—but slowly, more people began greeting him back. His small wave became a ritual that softened the rush of the morning crowd.'''
+        '''At a busy train station, an elderly man greeted everyone who passed by with a cheerful “Good morning!” Some ignored him, some smiled, some looked surprised but slowly, more people began greeting him back. His small wave became a ritual that softened the rush of the morning crowd.'''
     ..punchline = 'Kindness turns strangers into neighbors.',
 
   Story()
@@ -857,7 +857,7 @@ final List<Story> offlineStories = [
     ..category = 'Friendship'
     ..title = 'The Patch on the Kite'
     ..content =
-        '''Max’s kite tore in the middle of the schoolyard race. He felt the sting of tears until Nora pulled out a small square of fabric she kept for art class. Together they patched the kite and sent it soaring again. It didn’t win, but Max never forgot how Nora didn’t try to fix the whole day—just the piece that mattered most.'''
+        '''Max’s kite tore in the middle of the schoolyard race. He felt the sting of tears until Nora pulled out a small square of fabric she kept for art class. Together they patched the kite and sent it soaring again. It didn’t win, but Max never forgot how Nora didn’t try to fix the whole day; just the piece that mattered most.'''
     ..punchline =
         'Friends don’t need to solve everything; they just help the part that hurts.',
 
@@ -936,7 +936,7 @@ final List<Story> offlineStories = [
     ..category = 'Friendship'
     ..title = 'The Quiet Cheer'
     ..content =
-        '''At a local talent show, Ben froze on stage. The room fell silent until his friend Raya stood up and clapped twice—soft, steady, encouraging. Others joined in, and Ben found his voice again. He didn’t remember the song perfectly, but he remembered that first quiet cheer.'''
+        '''At a local talent show, Ben froze on stage. The room fell silent until his friend Raya stood up and clapped twice-soft, steady, encouraging. Others joined in, and Ben found his voice again. He didn’t remember the song perfectly, but he remembered that first quiet cheer.'''
     ..punchline = 'A true friend gives courage before the crowd does.',
 
   Story()
@@ -950,7 +950,7 @@ final List<Story> offlineStories = [
     ..category = 'Friendship'
     ..title = 'The Long Ribbon'
     ..content =
-        '''When the art club prepared for a parade, each student tied a ribbon to a giant hoop for decoration. One ribbon stretched across the hoop twice—bright, bold, unmistakably long. It belonged to two friends who tied their pieces together so they would walk the route side by side.'''
+        '''When the art club prepared for a parade, each student tied a ribbon to a giant hoop for decoration. One ribbon stretched across the hoop twice-bright, bold, unmistakably long. It belonged to two friends who tied their pieces together so they would walk the route side by side.'''
     ..punchline =
         'Friends choose to be connected, even when the world moves fast.',
 
@@ -974,14 +974,14 @@ final List<Story> offlineStories = [
     ..category = 'Courage'
     ..title = 'The Broken String'
     ..content =
-        '''During a school performance, Tom’s guitar string snapped mid-song. His cheeks flushed, but he kept strumming with the remaining strings, humming the missing notes. When he finished, the audience stood in applause—not because it was perfect, but because he didn’t walk away.'''
+        '''During a school performance, Tom’s guitar string snapped mid-song. His cheeks flushed, but he kept strumming with the remaining strings, humming the missing notes. When he finished, the audience stood in applause; not because it was perfect, but because he didn’t walk away.'''
     ..punchline = 'Courage is finishing the song even when the strings break.',
 
   Story()
     ..category = 'Courage'
     ..title = 'The Red Bicycle'
     ..content =
-        '''Lena fell off her red bicycle more times than she could count. Each fall stung, and each scrape made her want to quit. Her dad whispered, “Try once more. Not for the ride—just for the trying.” That day she finally stayed upright, wobbling but smiling.'''
+        '''Lena fell off her red bicycle more times than she could count. Each fall stung, and each scrape made her want to quit. Her dad whispered, “Try once more. Not for the ride, just for the trying.” That day she finally stayed upright, wobbling but smiling.'''
     ..punchline = 'Courage doesn’t erase fear; it tries again anyway.',
 
   Story()
@@ -996,14 +996,14 @@ final List<Story> offlineStories = [
     ..category = 'Courage'
     ..title = 'The Hilltop'
     ..content =
-        '''A group of kids dared each other to climb the steep hill outside town. Most turned back halfway, but Jade kept climbing—slowly, carefully, alone. When she reached the top, she didn’t shout or boast. She simply sat, breathing in the view she earned at her own pace.'''
+        '''A group of kids dared each other to climb the steep hill outside town. Most turned back halfway, but Jade kept climbing slowly, carefully, alone. When she reached the top, she didn’t shout or boast. She simply sat, breathing in the view she earned at her own pace.'''
     ..punchline = 'Courage is moving forward even when no one cheers you on.',
 
   Story()
     ..category = 'Courage'
     ..title = 'The Lost Bookmark'
     ..content =
-        '''Ben borrowed a library book and accidentally tore the bookmark inside—a handmade one the librarian loved. Instead of pretending nothing happened, he returned the book and apologized. To his surprise, the librarian smiled warmly and said, “Honesty is braver than perfection.”'''
+        '''Ben borrowed a library book and accidentally tore the bookmark inside; a handmade one the librarian loved. Instead of pretending nothing happened, he returned the book and apologized. To his surprise, the librarian smiled warmly and said, “Honesty is braver than perfection.”'''
     ..punchline = 'Courage grows in the moments we choose truth over hiding.',
 
   Story()
@@ -1019,7 +1019,7 @@ final List<Story> offlineStories = [
     ..content =
         '''During a windy night, Arin heard a neighbor’s window banging loudly. Everyone else stayed indoors, but Arin grabbed a coat and hurried outside to secure it. When the neighbor thanked him later, Arin shrugged. “I was scared too,” he said. “But someone had to hold it still.”'''
     ..punchline =
-        'Courage isn’t fearlessness—it’s choosing to help despite fear.',
+        'Courage isn’t fearlessness, it’s choosing to help despite fear.',
 
   Story()
     ..category = 'Courage'
@@ -1063,7 +1063,7 @@ final List<Story> offlineStories = [
     ..content =
         '''Every morning, grandma walked the forest path even when her knees ached. One day her grandson asked why she didn’t stay home. She smiled and said, “Courage isn’t only for the young. It’s what keeps our steps meaningful, no matter our age.”'''
     ..punchline =
-        'Courage is choosing to walk your path—even slowly—every day.',
+        'Courage is choosing to walk your path, even slowly every day.',
 
   Story()
     ..category = 'Philosophy'
@@ -1111,7 +1111,7 @@ final List<Story> offlineStories = [
     ..category = 'Philosophy'
     ..title = 'The Half-Finished Drawing'
     ..content =
-        '''A young artist showed her mentor a half-finished drawing and apologized for the mistakes. The mentor said, “A work in progress is more honest than a flawless one that was never attempted.” The artist realized imperfection is not failure—it’s movement.'''
+        '''A young artist showed her mentor a half-finished drawing and apologized for the mistakes. The mentor said, “A work in progress is more honest than a flawless one that was never attempted.” The artist realized imperfection is not failure, it’s movement.'''
     ..punchline = 'We are all unfinished drawings, still becoming whole.',
 
   Story()
@@ -1132,7 +1132,7 @@ final List<Story> offlineStories = [
     ..category = 'Philosophy'
     ..title = 'The Clock with No Numbers'
     ..content =
-        '''An inventor made a clock without numbers. When people asked how to tell time, he replied, “Time is not only measured by hours—it’s measured by meaning.” People began paying attention not just to the minutes passing, but to how they spent them.'''
+        '''An inventor made a clock without numbers. When people asked how to tell time, he replied, “Time is not only measured by hours, it’s measured by meaning.” People began paying attention not just to the minutes passing, but to how they spent them.'''
     ..punchline = 'A meaningful moment is worth more than an empty hour.',
 
   Story()
@@ -1160,28 +1160,28 @@ final List<Story> offlineStories = [
     ..category = 'Philosophy'
     ..title = 'The Stone Collector'
     ..content =
-        '''An old man walked the shoreline picking up stones. A child asked what he was looking for. “Nothing,” he said. “I simply enjoy the act of noticing.” The child realized that wonder doesn’t require purpose—only presence.'''
+        '''An old man walked the shoreline picking up stones. A child asked what he was looking for. “Nothing,” he said. “I simply enjoy the act of noticing.” The child realized that wonder doesn’t require purpose, only presence.'''
     ..punchline = 'Not everything meaningful needs a goal.',
 
   Story()
     ..category = 'Philosophy'
     ..title = 'The Mirror of Rain'
     ..content =
-        '''After a long storm, a girl stared at a puddle reflecting a broken sky. Her mother said, “The sky isn’t broken—the clouds are just passing.” The girl realized the same was true for her sadness.'''
+        '''After a long storm, a girl stared at a puddle reflecting a broken sky. Her mother said, “The sky isn’t broken, the clouds are just passing.” The girl realized the same was true for her sadness.'''
     ..punchline = 'Even troubled reflections clear when the clouds move on.',
 
   Story()
     ..category = 'Growth'
     ..title = 'The Day the Seed Chose Sunlight'
     ..content =
-        '''A tiny seed lay beneath the soil, unsure if it should break open. It feared the unknown—what if the world above was harsh? What if it wasn’t strong enough? But staying buried felt smaller each day. So the seed cracked, not because it felt ready, but because growth required it. It pushed upward, slowly, painfully, but consistently. When it finally reached sunlight, it realized the risk had been the path all along.'''
+        '''A tiny seed lay beneath the soil, unsure if it should break open. It feared the unknown, what if the world above was harsh? What if it wasn’t strong enough? But staying buried felt smaller each day. So the seed cracked, not because it felt ready, but because growth required it. It pushed upward, slowly, painfully, but consistently. When it finally reached sunlight, it realized the risk had been the path all along.'''
     ..punchline = 'Growth begins the moment you choose expansion over comfort.',
 
   Story()
     ..category = 'Growth'
     ..title = 'The Slowest Climber'
     ..content =
-        '''A young hiker once joined a group climbing a long, winding trail. Everyone moved faster than her, and each time she fell behind, she felt smaller. But instead of quitting, she kept a steady rhythm—one slow step, one deeper breath. Hours later, she reached the top and found the others amazed. They had rushed and burned out, while she had endured. The mountain didn’t reward speed; it rewarded consistency.'''
+        '''A young hiker once joined a group climbing a long, winding trail. Everyone moved faster than her, and each time she fell behind, she felt smaller. But instead of quitting, she kept a steady rhythm: one slow step, one deeper breath. Hours later, she reached the top and found the others amazed. They had rushed and burned out, while she had endured. The mountain didn’t reward speed; it rewarded consistency.'''
     ..punchline =
         'The slow step you keep taking outlasts the fast step you abandon.',
 
@@ -1189,7 +1189,7 @@ final List<Story> offlineStories = [
     ..category = 'Growth'
     ..title = 'The Cup That Learned to Hold More'
     ..content =
-        '''A student complained to her mentor that challenges felt overwhelming. The mentor filled a small cup with water until it overflowed. “Your capacity is small,” he said gently. “You’re asking life to pour less, instead of learning to hold more.” Over time she faced her tasks rather than avoiding them. Slowly, she grew stronger, more capable. Life didn’t become easier—she became larger.'''
+        '''A student complained to her mentor that challenges felt overwhelming. The mentor filled a small cup with water until it overflowed. “Your capacity is small,” he said gently. “You’re asking life to pour less, instead of learning to hold more.” Over time she faced her tasks rather than avoiding them. Slowly, she grew stronger, more capable. Life didn’t become easier, she became larger.'''
     ..punchline =
         'Growth is expanding your capacity, not reducing your challenges.',
 
@@ -1206,27 +1206,27 @@ final List<Story> offlineStories = [
     ..content =
         '''A strong storm swept through a forest. The rigid trees snapped, but the flexible ones bent and survived. Afterward, the forest whispered a lesson: strength is not only firmness; it is adaptability. When life shakes you, the ability to bend keeps you standing.'''
     ..punchline =
-        'Flexibility is a quiet form of strength—and a key to growth.',
+        'Flexibility is a quiet form of strength and a key to growth.',
 
   Story()
     ..category = 'Growth'
     ..title = 'The Painter’s Second Attempt'
     ..content =
-        '''A painter ruined her first attempt at a beautiful landscape. Frustrated, she tore the canvas and stepped away. The next morning, she tried again—this time calmer, wiser, and more patient. The second painting became her masterpiece. The failure had taught her what skill alone could not: maturity, attention, and grace.'''
+        '''A painter ruined her first attempt at a beautiful landscape. Frustrated, she tore the canvas and stepped away. The next morning, she tried again; this time calmer, wiser, and more patient. The second painting became her masterpiece. The failure had taught her what skill alone could not: maturity, attention, and grace.'''
     ..punchline = 'Growth often hides in the second attempt.',
 
   Story()
     ..category = 'Growth'
     ..title = 'The Ladder You Cannot Skip'
     ..content =
-        '''A boy tried to jump halfway up a ladder because he wanted to climb faster. Every time, he slipped back down. His grandfather chuckled and said, “Every rung is a lesson. Skip one, and the ladder reminds you why it’s there.” The boy climbed slowly, step by step, and finally reached the top—safely and proudly.'''
+        '''A boy tried to jump halfway up a ladder because he wanted to climb faster. Every time, he slipped back down. His grandfather chuckled and said, “Every rung is a lesson. Skip one, and the ladder reminds you why it’s there.” The boy climbed slowly, step by step, and finally reached the top safely and proudly.'''
     ..punchline = 'True growth is built one rung at a time.',
 
   Story()
     ..category = 'Growth'
     ..title = 'The Broken Pot'
     ..content =
-        '''A gardener kept a cracked pot because it leaked just enough water to nourish the wildflowers beside the path. The pot felt ashamed until the gardener revealed the beauty it helped create. It realized growth doesn’t require perfection—just purpose.'''
+        '''A gardener kept a cracked pot because it leaked just enough water to nourish the wildflowers beside the path. The pot felt ashamed until the gardener revealed the beauty it helped create. It realized growth doesn’t require perfection, just purpose.'''
     ..punchline =
         'Your flaws don’t limit your growth; they shape your contribution.',
 
@@ -1234,21 +1234,21 @@ final List<Story> offlineStories = [
     ..category = 'Growth'
     ..title = 'The Door That Wouldn’t Open'
     ..content =
-        '''A young woman pushed against a heavy wooden door, convinced strength alone would move it. After tiring herself out, she noticed a small sign: “Pull.” She laughed, stepped back, and the door opened easily. Sometimes growth isn’t about pushing harder—it’s about learning to try differently.'''
+        '''A young woman pushed against a heavy wooden door, convinced strength alone would move it. After tiring herself out, she noticed a small sign: “Pull.” She laughed, stepped back, and the door opened easily. Sometimes growth isn’t about pushing harder, it’s about learning to try differently.'''
     ..punchline = 'When effort fails, wisdom succeeds.',
 
   Story()
     ..category = 'Growth'
     ..title = 'Unfinished Steps'
     ..content =
-        '''An older man taught his grandson to carve wood. Each time the boy rushed, the shape came out uneven. “Why does mine never look good?” he asked. The man replied, “Growth isn’t measured by how quickly you finish, but by how deeply you learn.” With patience, the boy improved—not suddenly, but certainly.'''
+        '''An older man taught his grandson to carve wood. Each time the boy rushed, the shape came out uneven. “Why does mine never look good?” he asked. The man replied, “Growth isn’t measured by how quickly you finish, but by how deeply you learn.” With patience, the boy improved; not suddenly, but certainly.'''
     ..punchline = 'Growth happens quietly in the space patience creates.',
 
   Story()
     ..category = 'Growth'
     ..title = 'The Whisper of Improvement'
     ..content =
-        '''A violinist practiced daily, but felt she wasn’t improving. One evening, she listened to an old recording of herself and was shocked—she had grown more than she realized. Growth rarely shouts; it whispers through small, steady changes.'''
+        '''A violinist practiced daily, but felt she wasn’t improving. One evening, she listened to an old recording of herself and was shocked she had grown more than she realized. Growth rarely shouts; it whispers through small, steady changes.'''
     ..punchline = 'You’re improving even when you don’t notice it.',
 
   Story()
@@ -1277,14 +1277,14 @@ final List<Story> offlineStories = [
     ..category = 'Growth'
     ..title = 'The Student Who Stayed Curious'
     ..content =
-        '''A student asked countless questions—some simple, some profound. Others teased him for not knowing enough, but he kept asking anyway. Over time, his curiosity opened doors the silent ones never found. His teacher told him, “Curiosity is the soil where growth thrives.”'''
+        '''A student asked countless questions: some simple, some profound. Others teased him for not knowing enough, but he kept asking anyway. Over time, his curiosity opened doors the silent ones never found. His teacher told him, “Curiosity is the soil where growth thrives.”'''
     ..punchline = 'You grow fastest when you keep asking.',
 
   Story()
     ..category = 'Faith'
     ..title = 'The Lantern in the Tunnel'
     ..content =
-        '''A traveler entered a long, dark tunnel with only a small lantern. The light barely reached a few steps ahead, and he wondered if it was enough. But each step revealed the next, and slowly, the darkness gave way to an opening he couldn’t have seen from the start. He realized he didn’t need to see the entire path—just enough to keep walking.'''
+        '''A traveler entered a long, dark tunnel with only a small lantern. The light barely reached a few steps ahead, and he wondered if it was enough. But each step revealed the next, and slowly, the darkness gave way to an opening he couldn’t have seen from the start. He realized he didn’t need to see the entire path, just enough to keep walking.'''
     ..punchline =
         'Faith is trusting the little light you have until the sun appears.',
 
@@ -1292,7 +1292,7 @@ final List<Story> offlineStories = [
     ..category = 'Faith'
     ..title = 'The Unseen Roots'
     ..content =
-        '''A child watered a seed every day but grew impatient when nothing sprouted. His grandmother smiled and said, “Something is happening—you just can’t see it yet.” Weeks later, a small green stem broke through the soil. The boy learned that growth often begins where the eyes cannot reach.'''
+        '''A child watered a seed every day but grew impatient when nothing sprouted. His grandmother smiled and said, “Something is happening, you just can’t see it yet.” Weeks later, a small green stem broke through the soil. The boy learned that growth often begins where the eyes cannot reach.'''
     ..punchline =
         'Faith believes in what is growing long before it becomes visible.',
 
@@ -1329,7 +1329,7 @@ final List<Story> offlineStories = [
     ..category = 'Faith'
     ..title = 'The Waiting Room'
     ..content =
-        '''A woman waited anxiously for news she couldn’t control. A stranger beside her said, “Waiting is not punishment—it is preparation.” Those words stayed with her. Instead of panicking, she breathed, trusted, and reminded herself that outcomes don’t always move at the speed of desire.'''
+        '''A woman waited anxiously for news she couldn’t control. A stranger beside her said, “Waiting is not punishment, it is preparation.” Those words stayed with her. Instead of panicking, she breathed, trusted, and reminded herself that outcomes don’t always move at the speed of desire.'''
     ..punchline = 'Faith turns waiting into strength instead of fear.',
 
   Story()
@@ -1343,7 +1343,7 @@ final List<Story> offlineStories = [
     ..category = 'Faith'
     ..title = 'The Sparrow’s Confidence'
     ..content =
-        '''A small sparrow built its nest on a fragile branch that swayed in the wind. When asked why it chose such a risky spot, the sparrow chirped without fear. It didn’t trust the branch—it trusted its wings.'''
+        '''A small sparrow built its nest on a fragile branch that swayed in the wind. When asked why it chose such a risky spot, the sparrow chirped without fear. It didn’t trust the branch, it trusted its wings.'''
     ..punchline =
         'Faith is confidence in what’s within you, not in what’s beneath you.',
 
@@ -1351,35 +1351,35 @@ final List<Story> offlineStories = [
     ..category = 'Faith'
     ..title = 'The Stone That Didn’t Move'
     ..content =
-        '''A man tried for days to push away a heavy stone blocking a path. Exhausted, he finally prayed for strength instead of solutions. Soon others arrived and helped him move it. He realized faith doesn’t always remove obstacles—sometimes it brings the people who can.'''
+        '''A man tried for days to push away a heavy stone blocking a path. Exhausted, he finally prayed for strength instead of solutions. Soon others arrived and helped him move it. He realized faith doesn’t always remove obstacles, sometimes it brings the people who can.'''
     ..punchline = 'Faith invites support when your strength is not enough.',
 
   Story()
     ..category = 'Faith'
     ..title = 'The Night Before Dawn'
     ..content =
-        '''A village once believed the sun had vanished because a long storm kept the skies dark for days. An elder comforted them, saying, “Dawn always returns—it just takes longer on some days.” When light finally broke through, they understood. Some blessings simply take time.'''
+        '''A village once believed the sun had vanished because a long storm kept the skies dark for days. An elder comforted them, saying, “Dawn always returns, it just takes longer on some days.” When light finally broke through, they understood. Some blessings simply take time.'''
     ..punchline = 'Faith holds on longest when nothing else does.',
 
   Story()
     ..category = 'Faith'
     ..title = 'The Broken Compass'
     ..content =
-        '''A sailor discovered his compass was broken during a quiet night at sea. Instead of panicking, he looked to the stars—something he had learned long ago but rarely used. The stars guided him safely. He realized faith often reminds you of what you already know, but have forgotten to trust.'''
+        '''A sailor discovered his compass was broken during a quiet night at sea. Instead of panicking, he looked to the stars; something he had learned long ago but rarely used. The stars guided him safely. He realized faith often reminds you of what you already know, but have forgotten to trust.'''
     ..punchline = 'Faith is remembering the guidance you already carry.',
 
   Story()
     ..category = 'Faith'
     ..title = 'The Closed Window'
     ..content =
-        '''A boy prayed for a cool breeze on a hot afternoon but complained when nothing changed. His mother gently opened a window he hadn’t noticed was closed. The breeze immediately entered the room. Sometimes what we ask for is already available—we just need to make space for it.'''
+        '''A boy prayed for a cool breeze on a hot afternoon but complained when nothing changed. His mother gently opened a window he hadn’t noticed was closed. The breeze immediately entered the room. Sometimes what we ask for is already available, we just need to make space for it.'''
     ..punchline = 'Faith opens the window before the wind arrives.',
 
   Story()
     ..category = 'Faith'
     ..title = 'The Patient Fisherman'
     ..content =
-        '''A fisherman sat for hours with an empty net while others mocked his patience. He simply smiled and said, “Fish don’t come to noise.” At sundown, his quiet faith paid off—his net filled while the others went home empty.'''
+        '''A fisherman sat for hours with an empty net while others mocked his patience. He simply smiled and said, “Fish don’t come to noise.” At sundown, his quiet faith paid off. His net filled while the others went home empty.'''
     ..punchline = 'Faith thrives in patience, not panic.',
 
   Story()
@@ -1400,28 +1400,28 @@ final List<Story> offlineStories = [
     ..category = 'Adventure'
     ..title = 'The Little Boat'
     ..content =
-        '''A timid girl built a small wooden boat and set it on a calm lake. The boat drifted farther than she expected, carrying her to a part of the shore she had never explored. Flowers she had only seen in pictures grew there. Her journey taught her that adventures don’t demand great bravery—only the willingness to push off from the shore.'''
+        '''A timid girl built a small wooden boat and set it on a calm lake. The boat drifted farther than she expected, carrying her to a part of the shore she had never explored. Flowers she had only seen in pictures grew there. Her journey taught her that adventures don’t demand great bravery, only the willingness to push off from the shore.'''
     ..punchline = 'Adventure starts with a gentle push into the unknown.',
 
   Story()
     ..category = 'Adventure'
     ..title = 'The Hill That Called'
     ..content =
-        '''A hill outside a village seemed unremarkable, yet a young boy felt drawn to it. One day he finally climbed it, discovering a breathtaking view of fields and rivers stretching beyond the horizon. He realized the hill wasn’t special—the courage to climb it was.'''
+        '''A hill outside a village seemed unremarkable, yet a young boy felt drawn to it. One day he finally climbed it, discovering a breathtaking view of fields and rivers stretching beyond the horizon. He realized the hill wasn’t special, the courage to climb it was.'''
     ..punchline = 'Adventure rewards those who answer subtle invitations.',
 
   Story()
     ..category = 'Adventure'
     ..title = 'The Compass of Curiosity'
     ..content =
-        '''A curious girl carried a small compass everywhere she went. She didn’t always know why, but one day she followed its direction into a quiet forest. There she found a peaceful stream that became her favorite spot. Her compass didn’t point north—it pointed wherever she felt most alive.'''
+        '''A curious girl carried a small compass everywhere she went. She didn’t always know why, but one day she followed its direction into a quiet forest. There she found a peaceful stream that became her favorite spot. Her compass didn’t point north, it pointed wherever she felt most alive.'''
     ..punchline = 'Adventure follows the pull of curiosity.',
 
   Story()
     ..category = 'Adventure'
     ..title = 'The Unmarked Trail'
     ..content =
-        '''A hiker stumbled upon an unmarked trail branching from the main path. He hesitated, unsure where it would lead, but decided to follow it slowly. The trail ended at a hidden waterfall, untouched by footprints. It became his secret place—found only because he dared to wander.'''
+        '''A hiker stumbled upon an unmarked trail branching from the main path. He hesitated, unsure where it would lead, but decided to follow it slowly. The trail ended at a hidden waterfall, untouched by footprints. It became his secret place, found only because he dared to wander.'''
     ..punchline = 'Adventure often hides on the paths without signs.',
 
   Story()
@@ -1442,7 +1442,7 @@ final List<Story> offlineStories = [
     ..category = 'Adventure'
     ..title = 'The Desert Dunes'
     ..content =
-        '''A traveler crossed quiet desert dunes, leaving footprints behind him. The wind slowly erased them, making the landscape look untouched again. He realized the desert did not preserve journeys—it invited them. He felt comforted knowing that every new day offered a fresh canvas for exploration.'''
+        '''A traveler crossed quiet desert dunes, leaving footprints behind him. The wind slowly erased them, making the landscape look untouched again. He realized the desert did not preserve journeys, it invited them. He felt comforted knowing that every new day offered a fresh canvas for exploration.'''
     ..punchline = 'Adventure is renewed every time you choose to begin.',
 
   Story()
@@ -1463,7 +1463,7 @@ final List<Story> offlineStories = [
     ..category = 'Adventure'
     ..title = 'The Wind on the Cliff'
     ..content =
-        '''Standing on a cliff, a young woman felt the wind pulling her forward—not to danger, but to possibility. She spread her arms and imagined herself soaring. She did not jump, but she left with a renewed desire to chase dreams she had delayed for too long.'''
+        '''Standing on a cliff, a young woman felt the wind pulling her forward; not to danger, but to possibility. She spread her arms and imagined herself soaring. She did not jump, but she left with a renewed desire to chase dreams she had delayed for too long.'''
     ..punchline =
         'Adventure sometimes begins in your heart before your feet move.',
 
@@ -1513,7 +1513,7 @@ final List<Story> offlineStories = [
     ..category = 'Inspiration'
     ..title = 'The Messages in the Sand'
     ..content =
-        '''A child visiting the beach wrote short hopeful messages in the sand—“Smile,” “Be kind,” “You’re strong.” Waves washed them away, but she kept writing. A stranger passing by said the messages made his day. She realized that even kindness that doesn’t last long can still change someone’s moment.'''
+        '''A child visiting the beach wrote short hopeful messages in the sand; “Smile,” “Be kind,” “You’re strong.” Waves washed them away, but she kept writing. A stranger passing by said the messages made his day. She realized that even kindness that doesn’t last long can still change someone’s moment.'''
     ..punchline = 'Inspiration is found in simple acts that ripple outward.',
 
   Story()
@@ -1563,7 +1563,7 @@ final List<Story> offlineStories = [
     ..category = 'Inspiration'
     ..title = 'The Unfinished Poem'
     ..content =
-        '''A young poet wrote half a poem and felt it wasn’t good enough to finish. Years later, she found it again and added one final line. It became her favorite work—not because it was perfect, but because it reminded her that growth turns unfinished things into meaningful ones.'''
+        '''A young poet wrote half a poem and felt it wasn’t good enough to finish. Years later, she found it again and added one final line. It became her favorite work, not because it was perfect, but because it reminded her that growth turns unfinished things into meaningful ones.'''
     ..punchline =
         'Inspiration often waits inside things you haven’t finished yet.',
 
@@ -1571,7 +1571,7 @@ final List<Story> offlineStories = [
     ..category = 'Inspiration'
     ..title = 'The Garden Bench'
     ..content =
-        '''An elderly man built a wooden bench under a quiet tree. For years, people sat there—children reading, friends talking, strangers resting. The man never asked for thanks; seeing others find comfort was enough. His small gift reminded everyone that generosity creates lasting inspiration.'''
+        '''An elderly man built a wooden bench under a quiet tree. For years, people sat there: children reading, friends talking, strangers resting. The man never asked for thanks; seeing others find comfort was enough. His small gift reminded everyone that generosity creates lasting inspiration.'''
     ..punchline = 'Inspiration grows in places we build for others.',
 
   Story()
@@ -1585,7 +1585,7 @@ final List<Story> offlineStories = [
     ..category = 'Inspiration'
     ..title = 'The Old Tree’s Shade'
     ..content =
-        '''A tall tree stood at the edge of a playground, shading children from the sun. It never asked for attention; it simply offered comfort. One child wondered how something so quiet could make such a difference. Her teacher said, “Greatness isn’t always loud—it’s helpful.”'''
+        '''A tall tree stood at the edge of a playground, shading children from the sun. It never asked for attention; it simply offered comfort. One child wondered how something so quiet could make such a difference. Her teacher said, “Greatness isn’t always loud, it’s helpful.”'''
     ..punchline = 'Inspiration often comes from what quietly supports us.',
 
   Story()
