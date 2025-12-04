@@ -37,6 +37,7 @@ class MoreScreen extends StatelessWidget {
         await launchUrl(uri, mode: LaunchMode.inAppWebView);
       } catch (e2) {
         ScaffoldMessenger.of(
+          // ignore: use_build_context_synchronously
           context,
         ).showSnackBar(SnackBar(content: Text("Could not open link: $e2")));
       }
@@ -132,6 +133,7 @@ class MoreScreen extends StatelessWidget {
                         await seedService.clearDatabase();
                         await seedService.seedStoriesIfNeeded();
 
+                        // ignore: use_build_context_synchronously
                         context.read<ThemeProvider>().setTheme(ThemeMode.light);
 
                         // ignore: use_build_context_synchronously
