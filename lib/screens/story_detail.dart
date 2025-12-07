@@ -48,7 +48,7 @@ class StoryDetailScreen extends StatelessWidget {
                   onConfirm: (text) {
                     if (text.isNotEmpty) {
                       context.read<NotesProvider>().createNote(
-                        storyId: storyId,
+                        id: storyId,
                         content: text,
                       );
                     }

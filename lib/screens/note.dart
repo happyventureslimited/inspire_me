@@ -47,7 +47,7 @@ class _NotesScreenState extends State<NotesScreen> {
               onCancel: () => Navigator.pop(context),
               onConfirm: (text) {
                 if (text.isNotEmpty) {
-                  np.createNote(storyId: 0, content: text);
+                  np.createNote(id: 0, content: text);
                 }
                 Navigator.pop(context);
               },

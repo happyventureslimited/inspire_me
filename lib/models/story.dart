@@ -1,9 +1,10 @@
-import 'package:isar/isar.dart';
+import 'package:isar_plus/isar_plus.dart';
 part 'story.g.dart';
 
 @collection
 class Story {
-  Id id = Isar.autoIncrement;
+  @Id()
+  int id = 0;
 
   late String category;
   late String title;
