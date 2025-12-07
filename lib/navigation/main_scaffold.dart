@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../screens/categories.dart';
 import '../screens/saved.dart';
 import '../screens/note.dart';
 import '../screens/more.dart';
+import '../providers/story_provider.dart';
 
 class MainScaffold extends StatefulWidget {
   final int initialIndex;
   final Widget? child;
-
   const MainScaffold({super.key, this.initialIndex = 0, this.child});
 
   @override
@@ -16,11 +17,28 @@ class MainScaffold extends StatefulWidget {
 
 class _MainScaffoldState extends State<MainScaffold> {
   late int _index;
+  bool _isLoading = true;
 
   @override
   void initState() {
     super.initState();
     _index = widget.initialIndex;
+    _loadInitialData();
+  }
+
+  Future<void> _loadInitialData() async {
+    // Load data after the first frame
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      final storyProvider = context.read<StoryProvider>();
+      await storyProvider.loadCategories();
+      await storyProvider.loadSaved();
+      
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    });
   }
 
   Widget _pageFromIndex() {
@@ -40,14 +58,23 @@ class _MainScaffoldState extends State<MainScaffold> {
 
   @override
   Widget build(BuildContext context) {
-    final Widget page = widget.child ?? _pageFromIndex();
+    if (_isLoading) {
+      return Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(
+            color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
+      );
+    }
 
+    final Widget page = widget.child ?? _pageFromIndex();
+    
     return Scaffold(
       body: AnimatedSwitcher(
         duration: const Duration(milliseconds: 1000),
         child: page,
       ),
-
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -55,7 +82,6 @@ class _MainScaffoldState extends State<MainScaffold> {
             topRight: Radius.circular(20),
           ),
         ),
-
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20),
@@ -83,10 +109,22 @@ class _MainScaffoldState extends State<MainScaffold> {
             selectedIndex: _index,
             onDestinationSelected: (i) => setState(() => _index = i),
             destinations: [
-              NavigationDestination(icon: Icon(Icons.list, color: Theme.of(context).colorScheme.onSecondary), label: 'Categories',),
-              NavigationDestination(icon: Icon(Icons.bookmark, color: Theme.of(context).colorScheme.onSecondary), label: 'Saved'),
-              NavigationDestination(icon: Icon(Icons.note, color: Theme.of(context).colorScheme.onSecondary), label: 'Notes'),
-              NavigationDestination(icon: Icon(Icons.more_horiz, color: Theme.of(context).colorScheme.onSecondary), label: 'More',),
+              NavigationDestination(
+                icon: Icon(Icons.list, color: Theme.of(context).colorScheme.onSecondary),
+                label: 'Categories',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.bookmark, color: Theme.of(context).colorScheme.onSecondary),
+                label: 'Saved',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.note, color: Theme.of(context).colorScheme.onSecondary),
+                label: 'Notes',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.more_horiz, color: Theme.of(context).colorScheme.onSecondary),
+                label: 'More',
+              ),
             ],
           ),
         ),

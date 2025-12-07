@@ -14,13 +14,12 @@ class NotesProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> createNote({required int id, required String content}) async {
+  Future<void> createNote({required String content}) async {
     final note = Note()
-      ..id = id
       ..content = content
       ..createdAt = DateTime.now();
 
-    await isar.isar.writeAsync((isar) async {
+    await isar.isar.writeAsync((isar) {
       isar.notes.put(note);
     });
 
@@ -30,7 +29,7 @@ class NotesProvider extends ChangeNotifier {
   Future<void> updateNote(Note note, String newContent) async {
     note.content = newContent;
 
-    await isar.isar.writeAsync((isar) async {
+    await isar.isar.writeAsync((isar) {
       isar.notes.put(note);
     });
 
@@ -38,7 +37,7 @@ class NotesProvider extends ChangeNotifier {
   }
 
   Future<void> deleteNote(int noteId) async {
-    await isar.isar.writeAsync((isar) async {
+    await isar.isar.writeAsync((isar) {
       isar.notes.delete(noteId);
     });
 

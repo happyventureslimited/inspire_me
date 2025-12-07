@@ -19,9 +19,7 @@ class CategoryIcons {
     "Wisdom": Icons.menu_book,
   };
 
-  /// Returns an icon for a category.
-  /// If the category is not in the map, a default icon is used.
   static IconData forCategory(String category) {
-    return map[category] ?? Icons.menu_book; // fallback icon
+    return map[category] ?? Icons.menu_book;
   }
 }

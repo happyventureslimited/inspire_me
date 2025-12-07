@@ -16,7 +16,6 @@ void main() async {
   await isarService.init();
 
   final seeder = SeedService(isarService);
-  await seeder.clearDatabase();
   await seeder.seedStoriesIfNeeded();
 
   runApp(InspireMe(isarService: isarService));

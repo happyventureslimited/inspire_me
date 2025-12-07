@@ -13,7 +13,6 @@ class StoryDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final sp = context.watch<StoryProvider>();
-    // final np = context.watch<NotesProvider>();
 
     final story = sp.stories.firstWhere(
       (s) => s.id == storyId,
@@ -24,7 +23,11 @@ class StoryDetailScreen extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
-            icon: Icon(story.isSaved ? Icons.bookmark : Icons.bookmark_border),
+            icon: Icon(
+              context.watch<StoryProvider>().isStorySaved(story)
+                  ? Icons.bookmark
+                  : Icons.bookmark_border,
+            ),
             onPressed: () {
               sp.toggleSaved(story);
               if (!story.isSaved) {
@@ -47,10 +50,7 @@ class StoryDetailScreen extends StatelessWidget {
                   onCancel: () => Navigator.pop(context),
                   onConfirm: (text) {
                     if (text.isNotEmpty) {
-                      context.read<NotesProvider>().createNote(
-                        id: storyId,
-                        content: text,
-                      );
+                      context.read<NotesProvider>().createNote(content: text);
                     }
                     Navigator.pop(context);
                     AppSnack.show(context, "Note added successfully!");
@@ -61,43 +61,45 @@ class StoryDetailScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 30),
-        child: ListView(
-          children: [
-            Text(
-              story.title,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
-                fontSize: 20, 
-                fontWeight: FontWeight.w600
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 30),
+          child: ListView(
+            children: [
+              Text(
+                story.title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
                 ),
-            ),
-            const SizedBox(height: 12),
-
-            Text(story.content, style: TextStyle(fontSize: 16.7, height: 1.4)),
-
-            const SizedBox(height: 50),
-
-            Text(
-              'Lesson:',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
               ),
-            ),
-            SizedBox(height: 5,),
-            Text(
-              story.lesson,
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.w600
+              const SizedBox(height: 12),
+
+              Text(
+                story.content,
+                style: TextStyle(fontSize: 16.7, height: 1.4),
               ),
-            ),
-          ],
+
+              const SizedBox(height: 50),
+
+              Text(
+                'Lesson:',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(height: 5),
+              Text(
+                story.lesson,
+                style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+              ),
+            ],
+          ),
         ),
       ),
     );

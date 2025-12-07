@@ -9,7 +9,7 @@ class IsarService {
   Future<void> init() async {
     final dir = await getApplicationDocumentsDirectory();
     isar = Isar.open(
-      schemas: [StorySchema, NoteSchema,], 
+      schemas: [StorySchema, NoteSchema],
       directory: dir.path
     );
   }

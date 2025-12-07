@@ -26,87 +26,89 @@ class _StoryListScreenState extends State<StoryListScreen> {
 
     return Scaffold(
       appBar: AppBar(title: Text(widget.category)),
-      body: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
-        itemCount: stories.length,
-        itemBuilder: (context, index) {
-        final story = stories[index];
-
-        return Card(
-          elevation: 2,
-          shadowColor: Theme.of(context).colorScheme.onTertiaryFixed,
-          color: Theme.of(context).colorScheme.tertiary,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(20),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => StoryDetailScreen(storyId: story.id),
-                ),
-              );
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                children: [
-                  Container(
-                    height: 48,
-                    width: 48,
-                    decoration: BoxDecoration(
+      body: SafeArea(
+        child: ListView.builder(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+          itemCount: stories.length,
+          itemBuilder: (context, index) {
+          final story = stories[index];
+        
+          return Card(
+            elevation: 2,
+            shadowColor: Theme.of(context).colorScheme.onTertiaryFixed,
+            color: Theme.of(context).colorScheme.tertiary,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(20),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => StoryDetailScreen(storyId: story.id),
+                  ),
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 48,
+                      width: 48,
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.primary,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Icon(
+                        Icons.auto_stories,
+                        color: Theme.of(context).colorScheme.tertiary,
+                        size: 26,
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+          
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            story.title,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(fontWeight: FontWeight.w600),
+                          ),
+                          const SizedBox(height: 4),
+          
+                          Text(
+                            story.content,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+          
+                    Icon(
+                      Icons.chevron_right_rounded,
                       color: Theme.of(context).colorScheme.primary,
-                      borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Icon(
-                      Icons.auto_stories,
-                      color: Theme.of(context).colorScheme.tertiary,
-                      size: 26,
-                    ),
-                  ),
-                  const SizedBox(width: 16),
-        
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          story.title,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium
-                              ?.copyWith(fontWeight: FontWeight.w600),
-                        ),
-                        const SizedBox(height: 4),
-        
-                        Text(
-                          story.content,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium
-                              ?.copyWith(color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-        
-                  Icon(
-                    Icons.chevron_right_rounded,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        );
-        }
+          );
+          }
+        ),
       ),
     );
   }

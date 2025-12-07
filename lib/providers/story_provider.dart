@@ -16,7 +16,8 @@ class StoryProvider extends ChangeNotifier {
   Future<void> preloadStories(List<Story> initialStories) async {
     if (_isLoaded) return;
 
-    await isar.isar.writeAsync((isar) {
+    await isar.isar.writeAsync((isar) async{
+      isar.storys.clear(); 
       isar.storys.putAll(initialStories);
     });
 
@@ -55,22 +56,9 @@ class StoryProvider extends ChangeNotifier {
     });
 
     await loadSaved();
+    await loadStoriesByCategory(story.category);
     notifyListeners();
   }
 
   bool isStorySaved(Story s) => s.isSaved == true;
-
-  Future<void> clearSavedFlags() async {
-    final all = isar.isar.storys.where().findAll();
-
-    await isar.isar.writeAsync((isar) {
-      for (final s in all) {
-        s.isSaved = false;
-      }
-      isar.storys.putAll(all);
-    });
-
-    saved.clear();
-    notifyListeners();
-  }
 }

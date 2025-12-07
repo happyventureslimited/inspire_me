@@ -1,7 +1,6 @@
 import 'package:inspire_me/models/story.dart';
 import 'isar_service.dart';
 import './stories.dart';
-// import 'package:inspire_me/models/note.dart';
 
 class SeedService {
   final IsarService isar;
@@ -25,12 +24,6 @@ class SeedService {
   // Future<void> clearStories() async {
   //   await isar.isar.writeAsync((isar) async {
   //     isar.storys.clear();
-  //   });
-  // }
-
-  // Future<void> clearNotes() async {
-  //   await isar.isar.writeAsync((isar) async {
-  //     isar.notes.clear();
   //   });
   // }
 }

@@ -29,20 +29,22 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       // appBar: AppBar(
       //   title: const Text('Categories'),
       // ),
-      body: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 35),
-        itemCount: categories.length,
-        itemBuilder: (context, index) {
-          final cat = categories[index];
-          return CategoryCard(
-            title: cat,
-            icon: CategoryIcons.forCategory(cat),
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => StoryListScreen(category: cat)),
-            ),
-          );
-        },
+      body: SafeArea(
+        child: ListView.builder(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 35),
+          itemCount: categories.length,
+          itemBuilder: (context, index) {
+            final cat = categories[index];
+            return CategoryCard(
+              title: cat,
+              icon: CategoryIcons.forCategory(cat),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => StoryListScreen(category: cat)),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
