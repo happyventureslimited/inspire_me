@@ -7,23 +7,18 @@ class SeedService {
   SeedService(this.isar);
 
   Future<void> seedStoriesIfNeeded() async {
-    final count = isar.isar.storys.count();
+    final count = await isar.isar.storys.count();
     if (count > 0) return;
 
-    await isar.isar.writeAsync((isar) {
-      isar.storys.putAll(offlineStories);
+    await isar.isar.writeTxn(() async {
+      await isar.isar.storys.putAll(offlineStories);
     });
   }
 
   Future<void> clearDatabase() async {
-    await isar.isar.writeAsync((isar) {
-      isar.clear();
+    await isar.isar.writeTxn(() async {
+      await isar.isar.clear();
     });
   }
 
-  // Future<void> clearStories() async {
-  //   await isar.isar.writeAsync((isar) async {
-  //     isar.storys.clear();
-  //   });
-  // }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:isar_plus/isar_plus.dart';
+import 'package:isar/isar.dart';
 import '../data/isar_service.dart';
 import '../models/note.dart';
 
@@ -10,7 +10,7 @@ class NotesProvider extends ChangeNotifier {
   List<Note> notes = [];
 
   Future<void> loadAllNotes() async {
-    notes = isar.isar.notes.where().sortByCreatedAtDesc().findAll();
+    notes = await isar.isar.notes.where().sortByCreatedAtDesc().findAll();
     notifyListeners();
   }
 
@@ -19,8 +19,8 @@ class NotesProvider extends ChangeNotifier {
       ..content = content
       ..createdAt = DateTime.now();
 
-    await isar.isar.writeAsync((isar) {
-      isar.notes.put(note);
+    await isar.isar.writeTxn(() async {
+      await isar.isar.notes.put(note);
     });
 
     await loadAllNotes();
@@ -29,16 +29,16 @@ class NotesProvider extends ChangeNotifier {
   Future<void> updateNote(Note note, String newContent) async {
     note.content = newContent;
 
-    await isar.isar.writeAsync((isar) {
-      isar.notes.put(note);
+    await isar.isar.writeTxn(() async {
+      await isar.isar.notes.put(note);
     });
 
     await loadAllNotes();
   }
 
   Future<void> deleteNote(int noteId) async {
-    await isar.isar.writeAsync((isar) {
-      isar.notes.delete(noteId);
+    await isar.isar.writeTxn(() async {
+      await isar.isar.notes.delete(noteId);
     });
 
     await loadAllNotes();

@@ -1,10 +1,10 @@
-import 'package:isar_plus/isar_plus.dart';
+import 'package:isar/isar.dart';
+
 part 'story.g.dart';
 
 @collection
 class Story {
-  @Id()
-  int id = 0;
+  Id id = Isar.autoIncrement;
 
   late String category;
   late String title;
@@ -12,4 +12,5 @@ class Story {
   late String lesson;
 
   bool isSaved = false;
+  DateTime? savedAt;
 }

@@ -34,7 +34,7 @@ class _NotesScreenState extends State<NotesScreen> {
     final notes = np.notes;
 
     return Scaffold(
-      // appBar: AppBar(title: const Text('Notes')),
+      appBar: AppBar(title: const Text('Notes')),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.note_add),
         onPressed: () {
@@ -59,91 +59,89 @@ class _NotesScreenState extends State<NotesScreen> {
           ? const Center(child: CircularProgressIndicator())
           : notes.isEmpty
           ? const EmptyState(message: 'No notes available')
-          : SafeArea(
-            child: ListView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
-                itemCount: notes.length,
-                itemBuilder: (context, i) {
-                  final n = notes[i];
-                  final formatted = DateFormat(
-                    'yyyy-MM-dd    hh:mm a',
-                  ).format(n.createdAt.toLocal());
-            
-                  return Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+          : ListView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+              itemCount: notes.length,
+              itemBuilder: (context, i) {
+                final n = notes[i];
+                final formatted = DateFormat(
+                  'yyyy-MM-dd    hh:mm a',
+                ).format(n.createdAt.toLocal());
+
+                return Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: ListTile(
+                    contentPadding: EdgeInsets.only(left: 12, top: 5, right: 5, bottom: 5),
+                    horizontalTitleGap: 2,
+                    title: Text(
+                      n.content,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(height: 1.2),
                     ),
-                    child: ListTile(
-                      contentPadding: EdgeInsets.only(left: 12, top: 5, right: 5, bottom: 5),
-                      horizontalTitleGap: 2,
-                      title: Text(
-                        n.content,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(height: 1.2),
-                      ),
-            
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(height: 8),
-                          Text(
-                            formatted,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 12,
-                            ),
+
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 8),
+                        Text(
+                          formatted,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 12,
                           ),
-                        ],
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (_) => NoteDialog(
+                          title: "Edit Note",
+                          initialText: n.content,
+                          confirmLabel: "Update",
+                          onCancel: () => Navigator.pop(context),
+                          onConfirm: (text) {
+                            if (text.isNotEmpty) {
+                              np.updateNote(n, text);
+                            }
+                            Navigator.pop(context);
+                          },
+                        ),
+                      );
+                    },
+                    trailing: IconButton(
+                      padding: EdgeInsets.zero,
+                      constraints: const BoxConstraints.tightFor(
+                        width: 30,
+                        height: 30,
                       ),
-                      onTap: () {
-                        showDialog(
+                      icon: const Icon(
+                        Icons.delete,
+                        color: Colors.red,
+                        size: 20,
+                      ),
+                      onPressed: () async {
+                        final yes = await showConfirmDialog(
                           context: context,
-                          builder: (_) => NoteDialog(
-                            title: "Edit Note",
-                            initialText: n.content,
-                            confirmLabel: "Update",
-                            onCancel: () => Navigator.pop(context),
-                            onConfirm: (text) {
-                              if (text.isNotEmpty) {
-                                np.updateNote(n, text);
-                              }
-                              Navigator.pop(context);
-                            },
-                          ),
+                          title: "Delete Note!",
+                          message:
+                              "Are you sure?\nThis will permanently delete the note.",
+                          confirmbtn: "Delete"
                         );
+                        if (yes) {
+                          np.deleteNote(n.id);
+                          // ignore: use_build_context_synchronously
+                          AppSnack.show(context, "Note deleted");
+                        }
                       },
-                      trailing: IconButton(
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints.tightFor(
-                          width: 30,
-                          height: 30,
-                        ),
-                        icon: const Icon(
-                          Icons.delete,
-                          color: Colors.red,
-                          size: 20,
-                        ),
-                        onPressed: () async {
-                          final yes = await showConfirmDialog(
-                            context: context,
-                            title: "Delete Note!",
-                            message:
-                                "Are you sure?\nThis will permanently delete the note.",
-                            confirmbtn: "Delete"
-                          );
-                          if (yes) {
-                            np.deleteNote(n.id);
-                            // ignore: use_build_context_synchronously
-                            AppSnack.show(context, "Note deleted");
-                          }
-                        },
-                      ),
                     ),
-                  );
-                },
-              ),
-          ),
+                  ),
+                );
+              },
+            ),
     );
   }
 }

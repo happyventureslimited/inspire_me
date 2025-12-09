@@ -1,12 +1,10 @@
-import 'package:isar_plus/isar_plus.dart';
+import 'package:isar/isar.dart';
 
 part 'note.g.dart';
 
 @collection
 class Note {
-  @Id()
-  int id = 0;
-
+  Id id = Isar.autoIncrement;
   late String content;
   late DateTime createdAt;
 }
