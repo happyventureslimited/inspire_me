@@ -25,7 +25,7 @@ class _StoryListScreenState extends State<StoryListScreen> {
     final stories = sp.stories;
 
     return Scaffold(
-      appBar: AppBar(title: Text(widget.category)),
+      appBar: AppBar(title: Text('${widget.category} Stories')),
       body: ListView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
         itemCount: stories.length,

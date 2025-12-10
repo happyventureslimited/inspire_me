@@ -37,7 +37,6 @@ class MoreScreen extends StatelessWidget {
         await launchUrl(uri, mode: LaunchMode.inAppWebView);
       } catch (e2) {
         ScaffoldMessenger.of(
-          // ignore: use_build_context_synchronously
           context,
         ).showSnackBar(SnackBar(content: Text("Could not open link: $e2")));
       }
@@ -50,7 +49,7 @@ class MoreScreen extends StatelessWidget {
     final seedService = SeedService(isarService);
 
     return Scaffold(
-      // appBar: AppBar(title: const Text('More')),
+      appBar: AppBar(title: const Text('More')),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
