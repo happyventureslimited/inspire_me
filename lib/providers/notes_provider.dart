@@ -1,46 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:isar/isar.dart';
-import '../data/isar_service.dart';
-import '../models/note.dart';
+import 'package:drift/drift.dart';
+import '../data/database.dart'; // AppDatabase, Note, NotesCompanion
 
 class NotesProvider extends ChangeNotifier {
-  final IsarService isar;
-  NotesProvider(this.isar);
+  final AppDatabase db;
+  NotesProvider(this.db);
 
   List<Note> notes = [];
 
   Future<void> loadAllNotes() async {
-    notes = await isar.isar.notes.where().sortByCreatedAtDesc().findAll();
+    // Order by createdAt DESC
+    final query = db.select(db.notes)
+      ..orderBy([
+        (t) => OrderingTerm(expression: t.createdAt, mode: OrderingMode.desc),
+      ]);
+    notes = await query.get();
     notifyListeners();
   }
 
-  Future<void> createNote({required String content}) async {
-    final note = Note()
-      ..content = content
-      ..createdAt = DateTime.now();
+  Future<int> createNote({required String content}) async {
+    final now = DateTime.now();
+    final companion = NotesCompanion.insert(
+      content: content,
+      createdAt: now,
+    );
 
-    await isar.isar.writeTxn(() async {
-      await isar.isar.notes.put(note);
-    });
-
+    final id = await db.into(db.notes).insert(companion);
     await loadAllNotes();
+    return id;
   }
 
   Future<void> updateNote(Note note, String newContent) async {
-    note.content = newContent;
-
-    await isar.isar.writeTxn(() async {
-      await isar.isar.notes.put(note);
-    });
+    // Use typed update
+    await (db.update(db.notes)
+          ..where((tbl) => tbl.id.equals(note.id)))
+        .write(
+      NotesCompanion(
+        content: Value(newContent),
+        // keep createdAt unchanged — only update content
+      ),
+    );
 
     await loadAllNotes();
   }
 
   Future<void> deleteNote(int noteId) async {
-    await isar.isar.writeTxn(() async {
-      await isar.isar.notes.delete(noteId);
-    });
-
+    await (db.delete(db.notes)..where((tbl) => tbl.id.equals(noteId))).go();
     await loadAllNotes();
   }
 }

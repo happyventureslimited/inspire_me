@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:inspire_me/models/story.dart';
 import 'package:inspire_me/utils/snackbar.dart';
 import 'package:inspire_me/widget/empty_state.dart';
 import 'package:inspire_me/widget/note_dialog.dart';
 import 'package:provider/provider.dart';
+
+import '../../data/database.dart';          // <-- IMPORTANT FIX
 import '../../providers/story_provider.dart';
 import '../../providers/notes_provider.dart';
 
@@ -11,7 +12,11 @@ class StoryDetailScreen extends StatefulWidget {
   final int storyId;
   final bool fromSaved;
 
-  const StoryDetailScreen({super.key, required this.storyId, required this.fromSaved});
+  const StoryDetailScreen({
+    super.key,
+    required this.storyId,
+    required this.fromSaved,
+  });
 
   @override
   State<StoryDetailScreen> createState() => _StoryDetailScreenState();
@@ -30,8 +35,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
   Future<void> loadStory() async {
     final sp = context.read<StoryProvider>();
 
-    final s = await sp.isar.isar.storys.get(widget.storyId);
-
+    final s = await sp.getStoryById(widget.storyId); // <-- FIXED
     setState(() {
       story = s;
       loading = false;
@@ -51,18 +55,25 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
     if (story == null) {
       return Scaffold(
         appBar: AppBar(),
-        body: const EmptyState(message: 'Story not found')
+        body: const EmptyState(message: 'Story not found'),
       );
     }
 
     return Scaffold(
       appBar: AppBar(
         actions: [
+
+          /// SAVE / UNSAVE
           IconButton(
-            icon: Icon(story!.isSaved ? Icons.bookmark : Icons.bookmark_border),
+            icon: Icon(
+              story!.isSaved ? Icons.bookmark : Icons.bookmark_border,
+            ),
             onPressed: () async {
               await sp.toggleSaved(story!);
-              if (story!.isSaved == false) {
+
+              setState(() {});
+
+              if (!story!.isSaved) {
                 AppSnack.show(context, "Removed from saved");
                 if (widget.fromSaved) Navigator.pop(context);
               } else {
@@ -70,9 +81,11 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
               }
             },
           ),
+
+          /// ADD NOTE
           IconButton(
-            padding: EdgeInsets.symmetric(horizontal: 17),
-            icon: Icon(Icons.note_add),
+            padding: const EdgeInsets.symmetric(horizontal: 17),
+            icon: const Icon(Icons.note_add),
             onPressed: () {
               showDialog(
                 context: context,
@@ -81,9 +94,9 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                   initialText: "",
                   confirmLabel: "Save",
                   onCancel: () => Navigator.pop(context),
-                  onConfirm: (text) {
+                  onConfirm: (text) async {
                     if (text.isNotEmpty) {
-                      context.read<NotesProvider>().createNote(content: text);
+                      await context.read<NotesProvider>().createNote(content: text);
                     }
                     Navigator.pop(context);
                     AppSnack.show(context, "Note created!");
@@ -94,10 +107,13 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
           ),
         ],
       ),
+
+      /// BODY
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 30),
         child: ListView(
           children: [
+
             Text(
               story!.title,
               textAlign: TextAlign.center,
@@ -110,7 +126,10 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
 
             const SizedBox(height: 8),
 
-            Text(story!.content, style: TextStyle(fontSize: 16.7, height: 1.4)),
+            Text(
+              story!.content,
+              style: const TextStyle(fontSize: 16.7, height: 1.4),
+            ),
 
             const SizedBox(height: 50),
 
@@ -123,11 +142,16 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 5),
+
+            const SizedBox(height: 5),
+
             Text(
-              textAlign: TextAlign.center,
               story!.lesson,
-              style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ],
         ),

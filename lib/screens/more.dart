@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:inspire_me/data/isar_service.dart';
-import 'package:inspire_me/data/seed_service.dart';
+import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import 'package:inspire_me/data/db_service.dart'; // DBService (Drift wrapper)
+import 'package:inspire_me/data/seed_service.dart'; // SeedService that uses DBService
 import 'package:inspire_me/providers/theme_provider.dart';
 import 'package:inspire_me/screens/about.dart';
 import 'package:inspire_me/utils/snackbar.dart';
-import 'package:provider/provider.dart';
 import '../widget/confirm_dialog.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-class MoreScreen extends StatelessWidget {
+class MoreScreen extends StatefulWidget {
   const MoreScreen({super.key});
 
+  @override
+  State<MoreScreen> createState() => _MoreScreenState();
+}
+
+class _MoreScreenState extends State<MoreScreen> {
   void _navigateTo(BuildContext context, String route) {
     if (route.startsWith('http')) {
       openUrl(context, route);
@@ -36,18 +42,21 @@ class MoreScreen extends StatelessWidget {
       try {
         await launchUrl(uri, mode: LaunchMode.inAppWebView);
       } catch (e2) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text("Could not open link: $e2")));
+        if (!mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Could not open link: $e2")),
+        );
       }
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    final isarService = context.read<IsarService>();
-    final seedService = SeedService(isarService);
-
+    // Read the Drift DB service from the provider tree.
+    // Make sure you provide DBService somewhere above this in your app (e.g. MultiProvider).
+    final dbService = context.read<DBService>();
+    final seedService = SeedService(dbService.db);
+    
     return Scaffold(
       appBar: AppBar(title: const Text('More')),
       body: SafeArea(
@@ -57,7 +66,7 @@ class MoreScreen extends StatelessWidget {
             children: [
               Card(
                 child: ListTile(
-                  contentPadding: EdgeInsets.symmetric(
+                  contentPadding: const EdgeInsets.symmetric(
                     horizontal: 20,
                     vertical: 10,
                   ),
@@ -71,10 +80,10 @@ class MoreScreen extends StatelessWidget {
                   },
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Card(
                 child: ListTile(
-                  contentPadding: EdgeInsets.symmetric(
+                  contentPadding: const EdgeInsets.symmetric(
                     horizontal: 20,
                     vertical: 10,
                   ),
@@ -126,18 +135,24 @@ class MoreScreen extends StatelessWidget {
                           title: "Reset App!",
                           message:
                               "Are you sure?\nThis will reset the app and delete all saved stories and notes.",
-                          confirmbtn: "Continue"
+                          confirmbtn: "Continue",
                         );
-        
-                        if (yes) {
+
+                        if (!yes) return;
+
+                        try {
+                          // clear the DB and re-seed with offline data
                           await seedService.clearDatabase();
                           await seedService.seedStoriesIfNeeded();
-        
-                          // ignore: use_build_context_synchronously
+
+                          // safely update theme and show snackbar
+                          if (!mounted) return;
                           context.read<ThemeProvider>().setTheme(ThemeMode.light);
-        
-                          // ignore: use_build_context_synchronously
+                          if (!mounted) return;
                           AppSnack.show(context, "App reset complete");
+                        } catch (e) {
+                          if (!mounted) return;
+                          AppSnack.show(context, "Failed to reset app: $e");
                         }
                       },
                     ),

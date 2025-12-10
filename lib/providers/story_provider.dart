@@ -1,11 +1,10 @@
 import 'package:flutter/foundation.dart';
-import 'package:isar/isar.dart';
-import '../data/isar_service.dart';
-import '../models/story.dart';
+import 'package:drift/drift.dart';
+import '../data/database.dart'; // AppDatabase, Story, StoriesCompanion
 
 class StoryProvider extends ChangeNotifier {
-  final IsarService isar;
-  StoryProvider(this.isar);
+  final AppDatabase db;
+  StoryProvider(this.db);
 
   List<String> categories = [];
   List<Story> stories = [];
@@ -13,66 +12,73 @@ class StoryProvider extends ChangeNotifier {
 
   bool _isLoaded = false;
 
-  Future<void> preloadStories(List<Story> initialStories) async {
+  /// Preload initial stories
+  Future<void> preloadStories(List<StoriesCompanion> initialStories) async {
     if (_isLoaded) return;
 
-    await isar.isar.writeTxn(() async {
-      await isar.isar.storys.putAll(initialStories);
-    });
+    if (initialStories.isNotEmpty) {
+      await db.batch((b) {
+        b.insertAllOnConflictUpdate(db.stories, initialStories);
+      });
+    }
 
     _isLoaded = true;
   }
 
   Future<void> loadCategories() async {
-    final all = await isar.isar.storys.where().findAll();
+    final all = await db.select(db.stories).get();
     categories = all.map((s) => s.category).toSet().toList();
     categories.sort();
     notifyListeners();
   }
 
   Future<void> loadStoriesByCategory(String category) async {
-    stories = await isar.isar.storys
-        .filter()
-        .categoryEqualTo(category)
-        .sortByTitle()
-        .findAll();
-
+    final query = db.select(db.stories)
+      ..where((t) => t.category.equals(category))
+      ..orderBy([(t) => OrderingTerm(expression: t.title)]);
+    stories = await query.get();
     notifyListeners();
   }
 
   Future<void> loadSaved() async {
-    saved = await isar.isar.storys
-        .filter()
-        .isSavedEqualTo(true)
-        .sortBySavedAtDesc()
-        .findAll();
-
+    final query = db.select(db.stories)
+      ..where((t) => t.isSaved.equals(true))
+      ..orderBy([
+        (t) => OrderingTerm(expression: t.savedAt, mode: OrderingMode.desc),
+      ]);
+    saved = await query.get();
     notifyListeners();
   }
 
+  /// 🔥 NEW METHOD — required by your UI
+  Future<Story?> getStoryById(int id) async {
+    return await (db.select(db.stories)
+          ..where((t) => t.id.equals(id)))
+        .getSingleOrNull();
+  }
+
   Future<void> toggleSaved(Story story) async {
-    await isar.isar.writeTxn(() async {
-      story.isSaved = !story.isSaved;
-      if (story.isSaved) {
-        story.savedAt = DateTime.now();
-      } else {
-        story.savedAt = null;
-      }
-      await isar.isar.storys.put(story);
-    });
+    final newSaved = !story.isSaved;
+    final newSavedAt = newSaved ? DateTime.now() : null;
+
+    await (db.update(db.stories)..where((t) => t.id.equals(story.id))).write(
+      StoriesCompanion(
+        isSaved: Value(newSaved),
+        savedAt: Value(newSavedAt),
+      ),
+    );
 
     await loadSaved();
     notifyListeners();
   }
 
-  bool isStorySaved(Story s) => s.isSaved == true;
+  bool isStorySaved(Story s) => s.isSaved;
 
   List<Story> paginate(List<Story> source, int page, int pageSize) {
     final start = page * pageSize;
-    final end = start + pageSize;
-
     if (start >= source.length) return [];
 
-    return source.sublist(start, end.clamp(0, source.length));
+    final end = (start + pageSize).clamp(0, source.length);
+    return source.sublist(start, end);
   }
 }

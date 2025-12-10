@@ -1,24 +1,22 @@
-import 'package:inspire_me/models/story.dart';
-import 'isar_service.dart';
+import './database.dart';
 import './stories.dart';
 
 class SeedService {
-  final IsarService isar;
-  SeedService(this.isar);
+  final AppDatabase db;
+  SeedService(this.db);
 
   Future<void> seedStoriesIfNeeded() async {
-    final count = await isar.isar.storys.count();
+    final count = await db.select(db.stories).get().then((rows) => rows.length);
+
     if (count > 0) return;
 
-    await isar.isar.writeTxn(() async {
-      await isar.isar.storys.putAll(offlineStories);
+    await db.batch((batch) {
+      batch.insertAll(db.stories, offlineStories);
     });
   }
 
   Future<void> clearDatabase() async {
-    await isar.isar.writeTxn(() async {
-      await isar.isar.clear();
-    });
+    await db.delete(db.stories).go();
+    await db.delete(db.notes).go();
   }
-
 }
