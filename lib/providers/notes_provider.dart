@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:drift/drift.dart';
-import '../data/database.dart'; // AppDatabase, Note, NotesCompanion
+import '../data/database.dart'; 
 
 class NotesProvider extends ChangeNotifier {
   final AppDatabase db;
@@ -9,7 +9,6 @@ class NotesProvider extends ChangeNotifier {
   List<Note> notes = [];
 
   Future<void> loadAllNotes() async {
-    // Order by createdAt DESC
     final query = db.select(db.notes)
       ..orderBy([
         (t) => OrderingTerm(expression: t.createdAt, mode: OrderingMode.desc),
@@ -31,13 +30,11 @@ class NotesProvider extends ChangeNotifier {
   }
 
   Future<void> updateNote(Note note, String newContent) async {
-    // Use typed update
     await (db.update(db.notes)
           ..where((tbl) => tbl.id.equals(note.id)))
         .write(
       NotesCompanion(
         content: Value(newContent),
-        // keep createdAt unchanged — only update content
       ),
     );
 

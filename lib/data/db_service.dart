@@ -10,14 +10,11 @@ class DBService {
 
   Future<void> init() async {
     db = AppDatabase();
-    // Optionally run migrations or seed checks here.
   }
 
-  // Story helpers (equivalent to your isar usage)
   Future<List<Story>> getAllStories() => db.getAllStories();
 
   Future<int> countStories() async {
-    // more efficient count using SQL
     final result = await db.customSelect('SELECT COUNT(*) as c FROM stories').getSingle();
     return result.data['c'] as int;
   }
@@ -44,12 +41,10 @@ class DBService {
   }
 
   Future<void> putAllStories(List<Map<String, dynamic>> items) async {
-    // Accepts a list of maps (like your offlineStories). Converts and inserts in a single transaction.
     await db.transaction(() async {
       final batch = <StoriesCompanion>[];
       for (final m in items) {
         batch.add(StoriesCompanion.insert(
-          // if offlineStories have an id field, you can use Value(m['id']) and a non-autoIncrement insert
           category: m['category'] as String,
           title: m['title'] as String,
           content: m['content'] as String,
@@ -73,7 +68,6 @@ class DBService {
     });
   }
 
-  // Notes helpers
   Future<List<Note>> getAllNotes() => db.select(db.notes).get();
 
   Future<void> putNote({

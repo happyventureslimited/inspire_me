@@ -3,7 +3,7 @@ import 'package:inspire_me/providers/story_provider.dart';
 import 'package:inspire_me/screens/story_detail.dart';
 import 'package:provider/provider.dart';
 import '../widget/empty_state.dart';
-import '../../utils/snackbar.dart';  // <-- ADD THIS
+import '../../utils/snackbar.dart'; 
 
 class SavedScreen extends StatefulWidget {
   const SavedScreen({super.key});

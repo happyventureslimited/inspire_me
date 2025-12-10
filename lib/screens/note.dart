@@ -133,7 +133,6 @@ class _NotesScreenState extends State<NotesScreen> {
                         );
                         if (yes) {
                           np.deleteNote(n.id);
-                          // ignore: use_build_context_synchronously
                           AppSnack.show(context, "Note deleted");
                         }
                       },

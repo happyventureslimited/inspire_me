@@ -15,7 +15,6 @@ class _StoryListScreenState extends State<StoryListScreen> {
   @override
   void initState() {
     super.initState();
-    // ignore: use_build_context_synchronously
     Future.microtask(() => context.read<StoryProvider>().loadStoriesByCategory(widget.category));
   }
 

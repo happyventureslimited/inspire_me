@@ -27,7 +27,6 @@ class _MainScaffoldState extends State<MainScaffold> {
   }
 
   Future<void> _loadInitialData() async {
-    // Load data after the first frame
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       final storyProvider = context.read<StoryProvider>();
       await storyProvider.loadCategories();

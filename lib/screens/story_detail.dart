@@ -3,10 +3,9 @@ import 'package:inspire_me/utils/snackbar.dart';
 import 'package:inspire_me/widget/empty_state.dart';
 import 'package:inspire_me/widget/note_dialog.dart';
 import 'package:provider/provider.dart';
-
-import '../../data/database.dart';          // <-- IMPORTANT FIX
 import '../../providers/story_provider.dart';
 import '../../providers/notes_provider.dart';
+import 'package:inspire_me/data/database.dart';
 
 class StoryDetailScreen extends StatefulWidget {
   final int storyId;
@@ -34,22 +33,46 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
 
   Future<void> loadStory() async {
     final sp = context.read<StoryProvider>();
+    final s = await sp.getStoryById(widget.storyId);
 
-    final s = await sp.getStoryById(widget.storyId); // <-- FIXED
     setState(() {
       story = s;
       loading = false;
     });
   }
 
+  Future<void> toggleSaved() async {
+    final sp = context.read<StoryProvider>();
+
+    await sp.toggleSaved(story!);
+
+    final updated = await sp.getStoryById(story!.id);
+
+    if (!mounted) return;
+
+    setState(() {
+      story = updated;
+    });
+
+    if (widget.fromSaved && updated?.isSaved == false) {
+      Navigator.pop(context);
+      AppSnack.show(
+        context,
+        "Removed from saved",
+      );
+      return;
+    }
+
+    AppSnack.show(
+      context,
+      updated!.isSaved ? "Story saved!" : "Removed from saved",
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    final sp = context.watch<StoryProvider>();
-
     if (loading) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
-      );
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
     if (story == null) {
@@ -62,27 +85,11 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-
-          /// SAVE / UNSAVE
           IconButton(
-            icon: Icon(
-              story!.isSaved ? Icons.bookmark : Icons.bookmark_border,
-            ),
-            onPressed: () async {
-              await sp.toggleSaved(story!);
-
-              setState(() {});
-
-              if (!story!.isSaved) {
-                AppSnack.show(context, "Removed from saved");
-                if (widget.fromSaved) Navigator.pop(context);
-              } else {
-                AppSnack.show(context, "Story saved!");
-              }
-            },
+            icon: Icon(story!.isSaved ? Icons.bookmark : Icons.bookmark_border),
+            onPressed: toggleSaved,
           ),
 
-          /// ADD NOTE
           IconButton(
             padding: const EdgeInsets.symmetric(horizontal: 17),
             icon: const Icon(Icons.note_add),
@@ -96,7 +103,9 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
                   onCancel: () => Navigator.pop(context),
                   onConfirm: (text) async {
                     if (text.isNotEmpty) {
-                      await context.read<NotesProvider>().createNote(content: text);
+                      await context.read<NotesProvider>().createNote(
+                        content: text,
+                      );
                     }
                     Navigator.pop(context);
                     AppSnack.show(context, "Note created!");
@@ -108,12 +117,10 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
         ],
       ),
 
-      /// BODY
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 30),
         child: ListView(
           children: [
-
             Text(
               story!.title,
               textAlign: TextAlign.center,
@@ -148,10 +155,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen> {
             Text(
               story!.lesson,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.w600,
-              ),
+              style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
             ),
           ],
         ),

@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:drift/drift.dart';
-import '../data/database.dart'; // AppDatabase, Story, StoriesCompanion
+import '../data/database.dart'; 
 
 class StoryProvider extends ChangeNotifier {
   final AppDatabase db;
@@ -12,7 +12,6 @@ class StoryProvider extends ChangeNotifier {
 
   bool _isLoaded = false;
 
-  /// Preload initial stories
   Future<void> preloadStories(List<StoriesCompanion> initialStories) async {
     if (_isLoaded) return;
 
@@ -50,7 +49,6 @@ class StoryProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// 🔥 NEW METHOD — required by your UI
   Future<Story?> getStoryById(int id) async {
     return await (db.select(db.stories)
           ..where((t) => t.id.equals(id)))

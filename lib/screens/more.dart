@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import 'package:inspire_me/data/db_service.dart'; // DBService (Drift wrapper)
-import 'package:inspire_me/data/seed_service.dart'; // SeedService that uses DBService
+import 'package:inspire_me/data/db_service.dart'; 
+import 'package:inspire_me/data/seed_service.dart'; 
 import 'package:inspire_me/providers/theme_provider.dart';
 import 'package:inspire_me/screens/about.dart';
 import 'package:inspire_me/utils/snackbar.dart';
@@ -52,8 +51,6 @@ class _MoreScreenState extends State<MoreScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Read the Drift DB service from the provider tree.
-    // Make sure you provide DBService somewhere above this in your app (e.g. MultiProvider).
     final dbService = context.read<DBService>();
     final seedService = SeedService(dbService.db);
     
@@ -141,11 +138,9 @@ class _MoreScreenState extends State<MoreScreen> {
                         if (!yes) return;
 
                         try {
-                          // clear the DB and re-seed with offline data
                           await seedService.clearDatabase();
                           await seedService.seedStoriesIfNeeded();
 
-                          // safely update theme and show snackbar
                           if (!mounted) return;
                           context.read<ThemeProvider>().setTheme(ThemeMode.light);
                           if (!mounted) return;

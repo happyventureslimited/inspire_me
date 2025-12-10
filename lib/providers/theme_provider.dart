@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeProvider extends ChangeNotifier {
-  static const _key = "theme_mode"; // stored value
+  static const _key = "theme_mode"; 
 
   ThemeMode _mode = ThemeMode.system;
   ThemeMode get mode => _mode;
@@ -11,9 +11,6 @@ class ThemeProvider extends ChangeNotifier {
     _loadThemeFromStorage();
   }
 
-  // --------------------------------------------------------------
-  // Load theme on startup
-  // --------------------------------------------------------------
   Future<void> _loadThemeFromStorage() async {
     final prefs = await SharedPreferences.getInstance();
     final value = prefs.getString(_key);
@@ -25,9 +22,6 @@ class ThemeProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // --------------------------------------------------------------
-  // Save theme on toggle
-  // --------------------------------------------------------------
   Future<void> setTheme(ThemeMode newMode) async {
     _mode = newMode;
 
@@ -48,7 +42,6 @@ class ThemeProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Convenience getters
   bool get isDark => _mode == ThemeMode.dark;
   bool get isLight => _mode == ThemeMode.light;
 }

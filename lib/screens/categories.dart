@@ -16,7 +16,6 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
   @override
   void initState() {
     super.initState();
-    // ignore: use_build_context_synchronously
     Future.microtask(() => context.read<StoryProvider>().loadCategories());
   }
 
